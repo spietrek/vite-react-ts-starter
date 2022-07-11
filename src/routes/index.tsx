@@ -1,9 +1,10 @@
 import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { USER_ROLE as UR } from '@/constants'
-import InsSpinner from '@/components/atoms/InsSpinner'
-import BasePage from '@/pages/BasePage'
-import InsAuth from '@/components/organisms/InsAuth'
+import { USER_ROLE as UR } from '../constants'
+import InsSpinner from '../components/atoms/InsSpinner'
+import BasePage from '../pages/BasePage'
+import InsAuth from '../components/organisms/InsAuth'
+import ColumnThreePage from '../pages/ColumnThreePage'
 
 const HomePage = lazy(() => import('@/pages/HomePage'))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
@@ -17,7 +18,14 @@ const AppRoutes = (): JSX.Element => {
         <Route path="/" element={<BasePage />}>
           {/* Public Routes */}
           <Route path="unauthorized" element={<UnauthorizedPage />} />
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={
+              <ColumnThreePage>
+                <HomePage />
+              </ColumnThreePage>
+            }
+          />
 
           {/* Admin Protected Routes */}
           <Route element={<InsAuth allowedRoles={[UR.Admin]} />}>

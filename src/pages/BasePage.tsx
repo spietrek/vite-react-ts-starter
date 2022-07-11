@@ -1,33 +1,54 @@
-import { Outlet, useNavigate } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
+import { useEffect, useState } from 'react'
+import ReactGA from 'react-ga'
+import { Outlet, useLocation } from 'react-router-dom'
+import InsDrawer from '../components/molecules/InsDrawer'
+import InsSideNav from '../components/organisms/InsSideNav'
+import InsHeader from '../components/organisms/InsHeader'
+import { useOnline } from '../hooks/useOnline'
+
+const TRACKING_ID = 'UA-43288618-2'
+ReactGA.initialize(TRACKING_ID)
 
 const BasePage = (): JSX.Element => {
-  const navigate = useNavigate()
-  const auth = useAuth()
-  const { authenticated } = auth ?? false
+  const location = useLocation()
+  const online = useOnline()
 
-  const handleLogout = (): void => {
-    void auth.logout(() => {
-      navigate('/login', { replace: true })
-    })
+  const [anchorOpen, setAnchorOpen] = useState<boolean>(false)
+
+  const toggleDrawer =
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return
+      }
+
+      setAnchorOpen(open)
+    }
+
+  const handleToggleDrawer = (): void => {
+    setAnchorOpen(!anchorOpen)
   }
+
+  useEffect(() => {
+    if (online) {
+      ReactGA.pageview(window.location.pathname + window.location.search)
+    }
+  }, [online, location])
 
   return (
     <main>
-      <div className="tw-navbar tw-bg-neutral tw-text-neutral-content">
-        <div className="tw-navbar-start tw-mx-2 tw-px-2">
-          <span className="tw-text-lg tw-font-bold"> STORE </span>
-        </div>
-        <div className="tw-navbar-end">
-          {authenticated && (
-            <button className="tw-btn" onClick={handleLogout}>
-              Logout
-            </button>
-          )}
-        </div>
+      <InsHeader onToggleDrawer={handleToggleDrawer} />
+
+      <div style={{ padding: '12px 16px' }}>
+        <Outlet />
       </div>
 
-      <Outlet />
+      <InsDrawer anchor="left" open={anchorOpen} onClose={toggleDrawer(false)}>
+        <InsSideNav onMenuClick={handleToggleDrawer} />
+      </InsDrawer>
     </main>
   )
 }
