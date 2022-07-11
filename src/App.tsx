@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux'
-import { store } from './store'
 import { BrowserRouter } from 'react-router-dom'
-import { AuthProvider } from '@/hooks/useAuth'
-import AppRoutes from '@/routes'
+import { AuthProvider } from './hooks/useAuth'
+import AppRoutes from './routes'
+import { store } from './store'
 import './styles/index.css'
 
 const App = (): JSX.Element => (

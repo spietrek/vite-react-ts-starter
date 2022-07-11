@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
-import type { RootState } from '../../../store'
 import TodosDataService from '../../../services/todos.service'
+import type { RootState } from '../../../store'
 import { timeout } from '../../../utilities'
 
 interface TodoItemState {

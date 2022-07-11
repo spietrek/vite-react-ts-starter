@@ -3,8 +3,8 @@ import { useState, createContext, useContext } from 'react'
 import axios from 'axios'
 import { USER_ROLE } from '../constants'
 import AuthDataService from '../services/auth.service'
-import { timeout } from '..//utilities'
 import { users } from '../stories/data/users'
+import { timeout } from '../utilities'
 
 export interface AuthResponseType {
   success: boolean
