@@ -1,6 +1,6 @@
 const SettingsPage = (): JSX.Element => {
   return (
-    <div className="tw-w-full">
+    <div className="w-full">
       <h1>SETTINGS</h1>
     </div>
   )

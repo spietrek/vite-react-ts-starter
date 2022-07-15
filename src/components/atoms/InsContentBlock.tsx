@@ -6,9 +6,7 @@ interface IProps {
 }
 const InsContentBlock = ({ children, className = '' }: IProps): JSX.Element => {
   return (
-    <div
-      className={clsx('tw-w-full', 'tw-bg-white', 'tw-shadow-sm', className)}
-    >
+    <div className={clsx('w-full', 'bg-white', 'shadow-sm', className)}>
       {children}
     </div>
   )

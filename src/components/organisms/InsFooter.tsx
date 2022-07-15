@@ -11,9 +11,9 @@ const InsFooter = (): JSX.Element => {
       color="default"
       style={{ backgroundColor: '#fff' }}
     >
-      <div className="tw-w-full tw-items-center tw-justify-center tw-text-center">
+      <div className="w-full items-center justify-center text-center">
         <InsImage src="assets/images/wise_logo.png" alt="Wise" width="200" />
-        <InsBodyText className="tw-mt-2 tw-text-lg">
+        <InsBodyText className="mt-2 text-lg">
           Proudly funded by The Steele Family Foundation
         </InsBodyText>
       </div>

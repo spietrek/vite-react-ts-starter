@@ -9,7 +9,7 @@ const InsIndicator = ({ isLoading, children }: IProps): JSX.Element => {
   return (
     <>
       {isLoading ? (
-        <div className="tw-flex tw-justify-center">
+        <div className="flex justify-center">
           <CircularProgress />
         </div>
       ) : (

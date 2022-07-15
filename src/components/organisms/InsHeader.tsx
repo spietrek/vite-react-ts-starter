@@ -1,4 +1,5 @@
 import { MenuOutlined } from '@mui/icons-material'
+import { Switch } from '@mui/material'
 import { Link } from 'react-router-dom'
 import InsIconButton from '../atoms/InsIconButton'
 import InsImage from '../atoms/InsImage'
@@ -6,16 +7,22 @@ import InsAppBar from '../molecules/InsAppBar'
 import InsProfile from './InsProfile'
 
 interface IProps {
+  darkMode: boolean
+  onToggleDarkMode: () => void
   onToggleDrawer: () => void
 }
 
-const InsHeader = ({ onToggleDrawer }: IProps): JSX.Element => {
+const InsHeader = ({
+  darkMode,
+  onToggleDarkMode,
+  onToggleDrawer,
+}: IProps): JSX.Element => {
   return (
     <InsAppBar
       position="static"
-      style={{ backgroundColor: 'inherit', boxShadow: 'none' }}
+      style={{ backgroundColor: 'background.default', boxShadow: 'none' }}
     >
-      <div className="xs:tw-block lg:tw-hidden">
+      <div className="xs:block lg:hidden">
         <InsIconButton
           style={{ color: '#000', marginRight: '12px' }}
           onClick={onToggleDrawer}
@@ -31,8 +38,9 @@ const InsHeader = ({ onToggleDrawer }: IProps): JSX.Element => {
           width="200"
         />
       </Link>
-      <div className="tw-flex-grow" />
-      <InsProfile className="tw-justify-end" />
+      <div className="flex-grow" />
+      <Switch checked={darkMode} onChange={onToggleDarkMode} />
+      <InsProfile className="justify-end" />
     </InsAppBar>
   )
 }

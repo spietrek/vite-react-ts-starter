@@ -4,27 +4,24 @@
 
 /* custom base styles */
 @layer base {
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #f0f2f5;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
 }
 
 /* custom components styles */
 @layer components {
-  
 }
 
 /* custom utilities styles */
 @layer utilities {
 }
+
+/* #ins_sidenav {
+  li:hover {
+    background-color: #dbf4fc !important;
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  .Mui-selected {
+    background-color: #dbf4fc !important;
+  }
+} */

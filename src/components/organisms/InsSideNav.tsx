@@ -70,8 +70,8 @@ const InsSideNav = ({ onMenuClick }: IProps): JSX.Element => {
   }
 
   return (
-    <div className="tw-bg-white tw-py-4 tw-shadow-sm">
-      <div id="wise_sidenav">
+    <div className="bg-white py-4 shadow-sm dark:bg-black">
+      <div id="ins_sidenav">
         {menuItems.map(item => {
           const isSelected = location.pathname === item.key
 

@@ -1,6 +1,6 @@
 const NotFoundPage = (): JSX.Element => {
   return (
-    <div className="tw-w-full">
+    <div className="w-full">
       <h1>Oops! Page cannot be found.</h1>
     </div>
   )

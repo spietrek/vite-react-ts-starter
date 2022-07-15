@@ -1,9 +1,9 @@
 const InsSpinner = (): JSX.Element => {
   return (
-    <div className="tw-my-4 tw-w-full tw-text-center">
+    <div className="my-4 w-full text-center">
       <svg
         role="status"
-        className="tw-mr-2 tw-h-8 tw-w-full tw-animate-spin tw-fill-blue-600 tw-text-gray-200 dark:tw-text-gray-600"
+        className="mr-2 h-8 w-full animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

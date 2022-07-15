@@ -23,14 +23,7 @@ const InsProfile = ({ className = '' }: IProps): JSX.Element => {
   }
 
   return (
-    <div
-      className={clsx(
-        'tw-flex',
-        'tw-items-center',
-        'tw-justify-start',
-        className,
-      )}
-    >
+    <div className={clsx('flex', 'items-center', 'justify-start', className)}>
       <InsAvatar variant="square" src="assets/images/me.jpg" />
 
       <InsButton
@@ -40,7 +33,7 @@ const InsProfile = ({ className = '' }: IProps): JSX.Element => {
         onClick={handleClick}
         endIcon={<KeyboardArrowDown style={{ color: '#000' }} />}
       >
-        <InsBodyText className="tw-pt1 tw-font-bold tw-text-black" inline>
+        <InsBodyText className="pt1 font-bold" inline>
           Steve Pietrek
         </InsBodyText>
       </InsButton>

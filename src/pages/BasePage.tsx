@@ -5,6 +5,7 @@ import InsDrawer from '../components/molecules/InsDrawer'
 import InsHeader from '../components/organisms/InsHeader'
 import InsSideNav from '../components/organisms/InsSideNav'
 import { useOnline } from '../hooks/useOnline'
+import { useStore } from '../providers/withThemeProvider'
 
 const TRACKING_ID = 'UA-43288618-2'
 ReactGA.initialize(TRACKING_ID)
@@ -12,6 +13,13 @@ ReactGA.initialize(TRACKING_ID)
 const BasePage = (): JSX.Element => {
   const location = useLocation()
   const online = useOnline()
+  const { darkMode, setDarkMode } = useStore()
+
+  useEffect(() => {
+    if (online) {
+      ReactGA.pageview(window.location.pathname + window.location.search)
+    }
+  }, [online, location])
 
   const [anchorOpen, setAnchorOpen] = useState<boolean>(false)
 
@@ -28,19 +36,22 @@ const BasePage = (): JSX.Element => {
       setAnchorOpen(open)
     }
 
+  const handleToggleDarkMode = (): void => {
+    const value = !darkMode
+    setDarkMode(value)
+  }
+
   const handleToggleDrawer = (): void => {
     setAnchorOpen(!anchorOpen)
   }
 
-  useEffect(() => {
-    if (online) {
-      ReactGA.pageview(window.location.pathname + window.location.search)
-    }
-  }, [online, location])
-
   return (
     <main>
-      <InsHeader onToggleDrawer={handleToggleDrawer} />
+      <InsHeader
+        darkMode={darkMode}
+        onToggleDarkMode={handleToggleDarkMode}
+        onToggleDrawer={handleToggleDrawer}
+      />
 
       <div style={{ padding: '12px 16px' }}>
         <Outlet />
