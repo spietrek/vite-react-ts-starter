@@ -14,23 +14,14 @@ interface TodosState {
   isError: boolean
   isLoading: boolean
   count: number
-  completedCount: number
   todos: TodoItemState[]
 }
 
 export const retrieveTodos = createAsyncThunk('todos/retrieve', async () => {
+  await timeout(1500)
   const res = await TodosDataService.getAll()
   return res.data as TodoItemState[]
 })
-
-export const longRetrieveTodos = createAsyncThunk(
-  'todos/longRetrieve',
-  async () => {
-    await timeout(3000)
-    const res = await TodosDataService.getAll()
-    return res.data as TodoItemState[]
-  },
-)
 
 const initialState = {
   isError: false,
@@ -46,11 +37,10 @@ export const todosSlice = createSlice({
   initialState,
 
   reducers: {
-    clear: state => {
+    reset: state => {
       state.isError = false
       state.isLoading = false
       state.count = 0
-      state.completedCount = 0
       state.todos = []
     },
   },
@@ -63,9 +53,6 @@ export const todosSlice = createSlice({
 
     builder.addCase(retrieveTodos.fulfilled, (state, action) => {
       state.count = action.payload.length
-      state.completedCount = action.payload.filter(
-        (todo: TodoItemState) => todo.completed,
-      ).length
       state.todos = action.payload
       state.isLoading = false
     })
@@ -74,34 +61,18 @@ export const todosSlice = createSlice({
       state.isError = true
       state.isLoading = false
     })
-
-    builder.addCase(longRetrieveTodos.pending, state => {
-      state.isError = false
-      state.isLoading = true
-    })
-
-    builder.addCase(longRetrieveTodos.fulfilled, (state, action) => {
-      state.count = action.payload.length
-      state.completedCount = action.payload.filter(
-        (todo: TodoItemState) => todo.completed,
-      ).length
-      state.todos = action.payload
-      state.isLoading = false
-    })
-
-    builder.addCase(longRetrieveTodos.rejected, state => {
-      state.isError = true
-      state.isLoading = false
-    })
   },
 })
 
-export const { clear } = todosSlice.actions
+export const { reset } = todosSlice.actions
 
-const selectTodos = (state: RootState): TodoItemState[] => state.todos.todos
+const selectTodos = (state: RootState): TodoItemState[] =>
+  state?.storeTodos?.todos ?? []
+
 export const completedTodosSelector = createSelector([selectTodos], todos =>
   todos.filter((todo: TodoItemState) => todo.completed),
 )
+
 export const completedTodosCountSelector = createSelector(
   [selectTodos],
   todos => todos.filter((todo: TodoItemState) => todo.completed).length,
