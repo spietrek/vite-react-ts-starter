@@ -31,7 +31,7 @@ const InsProfile = ({ className = '' }: IProps): JSX.Element => {
         ariaHasPopup="true"
         ariaExpanded={open ? true : undefined}
         onClick={handleClick}
-        endIcon={<KeyboardArrowDown style={{ color: '#000' }} />}
+        endIcon={<KeyboardArrowDown />}
       >
         <InsBodyText className="pt1 font-bold" inline>
           Steve Pietrek

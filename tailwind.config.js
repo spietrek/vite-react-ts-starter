@@ -1,13 +1,14 @@
 const path = require('path')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [path.join(__dirname, './src/**/*.(js|jsx|ts|tsx)')],
   darkMode: 'class',
   theme: {
-    extend: {
-      boxShadow: {
-        '3xl': '0 2px 16px 0 rgb(0 0 0 / 50%)',
-      },
+    extend: {},
+    screens: {
+      xs: '200px',
+      ...defaultTheme.screens,
     },
   },
   variants: {

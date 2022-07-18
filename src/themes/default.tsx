@@ -7,6 +7,9 @@ const theme = createTheme({
     primary: {
       main: blueGrey[500],
     },
+    background: {
+      default: '#f0f2f5',
+    },
   },
 })
 

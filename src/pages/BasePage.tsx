@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
 import { Outlet, useLocation } from 'react-router-dom'
 import InsDrawer from '../components/molecules/InsDrawer'
+import InsFooter from '../components/organisms/InsFooter'
 import InsHeader from '../components/organisms/InsHeader'
 import InsSideNav from '../components/organisms/InsSideNav'
 import { useOnline } from '../hooks/useOnline'
@@ -46,7 +47,7 @@ const BasePage = (): JSX.Element => {
   }
 
   return (
-    <main>
+    <main className="min-w-[600px] overflow-x-auto">
       <InsHeader
         darkMode={darkMode}
         onToggleDarkMode={handleToggleDarkMode}
@@ -60,6 +61,8 @@ const BasePage = (): JSX.Element => {
       <InsDrawer anchor="left" open={anchorOpen} onClose={toggleDrawer(false)}>
         <InsSideNav onMenuClick={handleToggleDrawer} />
       </InsDrawer>
+
+      <InsFooter />
     </main>
   )
 }

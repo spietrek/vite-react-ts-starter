@@ -14,7 +14,7 @@
 @layer utilities {
 }
 
-/* #ins_sidenav {
+#ins_sidenav {
   li:hover {
     background-color: #dbf4fc !important;
     opacity: 0.9;
@@ -24,4 +24,4 @@
   .Mui-selected {
     background-color: #dbf4fc !important;
   }
-} */
+}
