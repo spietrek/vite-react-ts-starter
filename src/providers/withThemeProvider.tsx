@@ -36,7 +36,7 @@ const Provider: React.FC<Props> = ({ children }) => {
   )
 }
 
-export const useStore = () => useContext(Context)
+export const useDarkMode = () => useContext(Context)
 
 export function withProvider(Component: any) {
   return function WrapperComponent(props: any) {
@@ -51,7 +51,7 @@ export function withProvider(Component: any) {
 export { Context, Provider }
 
 export const useApp = () => {
-  const { darkMode, setDarkMode } = useStore()
+  const { darkMode, setDarkMode } = useDarkMode()
 
   return {
     darkMode,

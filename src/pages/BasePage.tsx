@@ -6,7 +6,7 @@ import InsFooter from '../components/organisms/InsFooter'
 import InsHeader from '../components/organisms/InsHeader'
 import InsSideNav from '../components/organisms/InsSideNav'
 import { useOnline } from '../hooks/useOnline'
-import { useStore } from '../providers/withThemeProvider'
+import { useDarkMode } from '../providers/withThemeProvider'
 
 const TRACKING_ID = 'UA-43288618-2'
 ReactGA.initialize(TRACKING_ID)
@@ -14,7 +14,7 @@ ReactGA.initialize(TRACKING_ID)
 const BasePage = (): JSX.Element => {
   const location = useLocation()
   const online = useOnline()
-  const { darkMode, setDarkMode } = useStore()
+  const { darkMode, setDarkMode } = useDarkMode()
 
   useEffect(() => {
     if (online) {
