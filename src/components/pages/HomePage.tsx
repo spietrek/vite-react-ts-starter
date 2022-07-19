@@ -1,4 +1,4 @@
-import WiseHome from '../components/templates/InsHome'
+import WiseHome from '../templates/InsHome'
 
 const HomePage = (): JSX.Element => {
   return <WiseHome />
