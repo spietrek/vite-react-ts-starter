@@ -4,7 +4,8 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -24,16 +25,28 @@
     "project": "./tsconfig.json"
   },
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["tsconfig.json"]
+      }
+    },
     "react": {
       "version": "detect"
     }
   },
   "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
     "jsx-a11y",
     "import",
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
     "prettier"
   ],
   "rules": {
@@ -67,9 +80,17 @@
       }
     ],
     "import/order": [
-      "error",
+      "warn",
       {
-        "groups": ["builtin", "external", "internal"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ],
         "pathGroups": [
           {
             "pattern": "react",
