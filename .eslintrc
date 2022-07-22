@@ -161,7 +161,8 @@
   },
   "overrides": [
     {
-      "files": ["*.spec.ts", "**/testing/**/*.ts"],
+      "files": ["**/**/*test.ts"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
       "rules": {
         "@typescript-eslint/camelcase": "off",
         "@typescript-eslint/no-explicit-any": "off",
