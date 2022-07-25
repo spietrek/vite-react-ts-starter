@@ -1,9 +1,9 @@
 import { AxiosResponse } from 'axios'
+import ITodosData from '@/types/todos.type'
 import http from './http.service'
 
 class TodosDataService {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  async getAll(): Promise<AxiosResponse<any, any>> {
+  async getAll(): Promise<AxiosResponse<ITodosData[]>> {
     return await http.get('https://jsonplaceholder.typicode.com/todos')
   }
 }
