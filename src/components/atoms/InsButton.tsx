@@ -4,7 +4,7 @@ import {
   ButtonColors,
   ButtonSizes,
   ButtonVariants,
-} from '../../types'
+} from '../../types/button.type'
 
 interface IProps {
   ariaControls?: string | undefined

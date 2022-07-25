@@ -3,7 +3,7 @@ import {
   VisibilityOutlined,
   WarningOutlined,
 } from '@mui/icons-material'
-import { IconStatusType } from '../../types'
+import { IconStatusType } from '../../types/iconStatus.type'
 
 interface IProps {
   style?: React.CSSProperties
