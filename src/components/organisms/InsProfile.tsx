@@ -24,7 +24,7 @@ const InsProfile = ({ className = '' }: IProps): JSX.Element => {
 
   return (
     <div className={clsx('flex', 'items-center', 'justify-start', className)}>
-      <InsAvatar variant="square" src="assets/images/me.jpg" />
+      <InsAvatar variant="circular" src="assets/images/me.jpg" />
 
       <InsButton
         ariaControls={open ? 'basic-menu' : undefined}

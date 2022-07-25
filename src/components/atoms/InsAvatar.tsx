@@ -1,6 +1,6 @@
 import { Avatar } from '@mui/material'
 
-type AvatarVariants = 'square' | 'rounded'
+type AvatarVariants = 'square' | 'rounded' | 'circular'
 
 interface IProps {
   alt?: string
