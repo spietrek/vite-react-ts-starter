@@ -1,7 +1,7 @@
-import WiseHome from '../templates/InsHome'
+import InsHome from '../templates/InsHome'
 
 const HomePage = (): JSX.Element => {
-  return <WiseHome />
+  return <InsHome />
 }
 
 export default HomePage

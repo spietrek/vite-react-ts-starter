@@ -9,7 +9,7 @@ interface IProps {
 const ColumnThreePage = ({ children }: IProps): JSX.Element => {
   return (
     <div className="flex w-full flex-grow flex-col flex-wrap sm:flex-row sm:flex-nowrap">
-      <div className="w-fixed flex-shrink flex-grow-0 pr-4 xs:hidden lg:block lg:w-1/4">
+      <div className="w-fixed mr-4 flex-shrink flex-grow-0 shadow-xl xs:hidden lg:block lg:w-1/4 ">
         <InsSideNav />
       </div>
 
