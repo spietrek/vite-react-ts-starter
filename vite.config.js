@@ -11,9 +11,9 @@ export default defineConfig({
     VitePWA({
       includeAssets: ['favicon.png', 'robots.txt'],
       manifest: {
-        name: 'WISE',
-        short_name: 'WISE Application',
-        description: 'WISE Application',
+        name: 'Insight',
+        short_name: 'Insight Application',
+        description: 'Insight Application',
         theme_color: '#ffffff',
         icons: [
           {

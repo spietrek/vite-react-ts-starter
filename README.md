@@ -1,4 +1,4 @@
-# Getting Started with Steele WISE application
+# Getting Started with Insight React application
 
 ## Available Scripts
 
