@@ -1,6 +1,12 @@
 import { AxiosResponse } from 'axios'
-import ITodosData from '@/types/todos.type'
 import http from './http.service'
+
+export interface ITodosData {
+  userId: number
+  id: number
+  title: string
+  completed: boolean
+}
 
 class TodosDataService {
   async getAll(): Promise<AxiosResponse<ITodosData[]>> {

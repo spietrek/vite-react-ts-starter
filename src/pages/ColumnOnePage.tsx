@@ -1,4 +1,4 @@
-import InsContentBlock from '../atoms/InsContentBlock'
+import InsContentBlock from '../components/atoms/InsContentBlock'
 
 interface IProps {
   children: JSX.Element

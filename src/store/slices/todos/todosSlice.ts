@@ -1,26 +1,19 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
-import TodosDataService from '../../../services/todos.service'
+import { timeout } from '../../../helpers'
+import TodosDataService, { ITodosData } from '../../../services/todos.service'
 import type { RootState } from '../../../store'
-import { timeout } from '../../../utilities'
-
-interface TodoItemState {
-  id: number
-  title: string
-  completed: boolean
-  userId: number
-}
 
 interface TodosState {
   isError: boolean
   isLoading: boolean
   count: number
-  todos: TodoItemState[]
+  todos: ITodosData[]
 }
 
 export const retrieveTodos = createAsyncThunk('todos/retrieve', async () => {
   await timeout(1500)
   const res = await TodosDataService.getAll()
-  return res.data as TodoItemState[]
+  return res.data
 })
 
 const initialState = {
@@ -66,16 +59,16 @@ export const todosSlice = createSlice({
 
 export const { reset } = todosSlice.actions
 
-const selectTodos = (state: RootState): TodoItemState[] =>
+const selectTodos = (state: RootState): ITodosData[] =>
   state?.storeTodos?.todos ?? []
 
 export const completedTodosSelector = createSelector([selectTodos], todos =>
-  todos.filter((todo: TodoItemState) => todo.completed),
+  todos.filter((todo: ITodosData) => todo.completed),
 )
 
 export const completedTodosCountSelector = createSelector(
   [selectTodos],
-  todos => todos.filter((todo: TodoItemState) => todo.completed).length,
+  todos => todos.filter((todo: ITodosData) => todo.completed).length,
 )
 
 const { reducer } = todosSlice

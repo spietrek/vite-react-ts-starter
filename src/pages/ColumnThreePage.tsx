@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/indent */
 
-import InsSideNav from '../organisms/InsSideNav'
+import InsSideNav from '../components/organisms/InsSideNav'
 
 interface IProps {
   children: JSX.Element

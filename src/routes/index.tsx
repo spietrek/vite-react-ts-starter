@@ -2,16 +2,14 @@ import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import InsSpinner from '../components/atoms/InsSpinner'
 import InsAuth from '../components/organisms/InsAuth'
-import BasePage from '../components/pages/BasePage'
-import ColumnThreePage from '../components/pages/ColumnThreePage'
 import { USER_ROLE as UR } from '../constants'
+import BasePage from '../pages/BasePage'
+import ColumnThreePage from '../pages/ColumnThreePage'
 
-const HomePage = lazy(() => import('../components/pages/HomePage'))
-const NotFoundPage = lazy(() => import('../components/pages/NotFoundPage'))
-const SettingsPage = lazy(() => import('../components/pages/SettingsPage'))
-const UnauthorizedPage = lazy(
-  () => import('../components/pages/UnauthorizedPage'),
-)
+const HomePage = lazy(() => import('../pages/HomePage'))
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
+const SettingsPage = lazy(() => import('../pages/SettingsPage'))
+const UnauthorizedPage = lazy(() => import('../pages/UnauthorizedPage'))
 
 const AppRoutes = (): JSX.Element => {
   return (

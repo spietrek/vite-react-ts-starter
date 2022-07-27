@@ -2,9 +2,9 @@
 import { useState, createContext, useContext } from 'react'
 import axios from 'axios'
 import { USER_ROLE } from '../constants'
+import { timeout } from '../helpers'
 import AuthDataService from '../services/auth.service'
 import { users } from '../stories/data/users'
-import { timeout } from '../utilities'
 
 export interface AuthResponseType {
   success: boolean
@@ -92,7 +92,7 @@ export const AuthProvider = ({
           tempErrorMsg = 'No Server Response'
         } else if (err.response.status === 400) {
           const { data } = err.response
-          const { error } = data
+          const { error } = data as { error: string }
           tempErrorMsg = error ?? 'Missing Email or Password'
         } else if (err.response.status === 401) {
           tempErrorMsg = 'Invalid credentials'
@@ -142,7 +142,7 @@ export const AuthProvider = ({
           tempErrorMsg = 'No Server Response'
         } else if (err.response.status === 400) {
           const { data } = err.response
-          const { error } = data
+          const { error } = data as { error: string }
           tempErrorMsg = error ?? 'Missing Email or Password'
         } else if (err.response.status === 401) {
           tempErrorMsg = 'Invalid credentials'

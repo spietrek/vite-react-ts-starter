@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
 import { Outlet, useLocation } from 'react-router-dom'
-import { useOnline } from '../../hooks/useOnline'
-import { useDarkMode } from '../../providers/withThemeProvider'
-import InsDrawer from '../molecules/InsDrawer'
-import InsFooter from '../organisms/InsFooter'
-import InsHeader from '../organisms/InsHeader'
-import InsSideNav from '../organisms/InsSideNav'
+import InsDrawer from '../components/molecules/InsDrawer'
+import InsFooter from '../components/organisms/InsFooter'
+import InsHeader from '../components/organisms/InsHeader'
+import InsSideNav from '../components/organisms/InsSideNav'
+import { useOnline } from '../hooks/useOnline'
+import { useDarkMode } from '../providers/withThemeProvider'
 
 const TRACKING_ID = 'UA-43288618-2'
 ReactGA.initialize(TRACKING_ID)

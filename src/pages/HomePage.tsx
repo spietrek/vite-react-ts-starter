@@ -1,4 +1,4 @@
-import InsHome from '../templates/InsHome'
+import InsHome from '../components/templates/InsHome'
 
 const HomePage = (): JSX.Element => {
   return <InsHome />
