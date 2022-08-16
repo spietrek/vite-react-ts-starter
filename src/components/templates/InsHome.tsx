@@ -12,7 +12,7 @@ const InsHome = (): JSX.Element => {
   return (
     <InsIndicator isLoading={loading}>
       <InsFlexCard />
-
+      <div className="py-4" />
       <InsCard>
         <InsCard.Media>
           <div className="h-full min-w-[250px]">
@@ -22,6 +22,7 @@ const InsHome = (): JSX.Element => {
             />
           </div>
         </InsCard.Media>
+
         <InsCard.Body>
           <InsHeading
             className="mb-2 text-xl font-bold text-gray-700"
@@ -39,6 +40,7 @@ const InsHome = (): JSX.Element => {
             nulla! Maiores et perferendis eaque, exercitationem praesentium
           </InsBodyText>
         </InsCard.Body>
+
         <InsCard.Footer>
           <>
             <InsPill text="#photography" />
