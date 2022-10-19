@@ -14,16 +14,16 @@ const InsightAlert = ({
   variant = 'info',
 }: PropsWithChildren<IProps>): JSX.Element => {
   const variantClass = ALERT_VARIANT_CONFIG[variant]
-  const classNames = clsx('alert rounded-none', variantClass)
+  const classNames = clsx('alert rounded-none flex-row', variantClass)
   const icon = ALERT_ICON_CONFIG[variant]
 
   return (
     <div className={classNames}>
-      <div>
-        {icon}
-        <span>{label}</span>
+      <div className="flex">
+        <div className="w-[30px]">{icon}</div>
+        {label}
       </div>
-      <div className="flex-none">
+      <div className="flex">
         <button className="btn btn-ghost btn-sm">View</button>
         <button className="btn btn-ghost btn-sm">
           <XMarkIcon className="h-4 w-4 cursor-pointer rounded-full hover:text-red-500" />
