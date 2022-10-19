@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react'
 import { Children } from 'react'
 
 interface IProps {
@@ -10,7 +11,7 @@ interface IChild {
   }
 }
 
-const InsightCard = ({ children }: IProps): JSX.Element => {
+const InsightCard = ({ children }: PropsWithChildren<IProps>): JSX.Element => {
   const subComponentList = Object.keys(InsightCard)
 
   const subComponents = subComponentList.map(key => {
@@ -31,15 +32,17 @@ const InsightCard = ({ children }: IProps): JSX.Element => {
   )
 }
 
-const Media = (props: IProps): JSX.Element => <div>{props.children}</div>
+const Media = (props: PropsWithChildren<IProps>): JSX.Element => (
+  <div>{props.children}</div>
+)
 InsightCard.Media = Media
 
-const Body = (props: IProps): JSX.Element => (
+const Body = (props: PropsWithChildren<IProps>): JSX.Element => (
   <div className="px-6 py-4">{props.children}</div>
 )
 InsightCard.Body = Body
 
-const Footer = (props: IProps): JSX.Element => (
+const Footer = (props: PropsWithChildren<IProps>): JSX.Element => (
   <div className="border-t-2 px-6 pt-4 pb-2">{props.children}</div>
 )
 InsightCard.Footer = Footer
