@@ -1,12 +1,13 @@
+import type { PropsWithChildren } from 'react'
 import { Navigate, useLocation, Outlet } from 'react-router-dom'
-import { USER_ROLE } from '../../constants'
 import { useAuth } from '../../hooks/useAuth'
+import type { USER_ROLE } from '../../constants/user'
 
 interface IProps {
   allowedRoles: USER_ROLE[]
 }
 
-const InsAuth = ({ allowedRoles }: IProps): JSX.Element => {
+const InsAuth = ({ allowedRoles }: PropsWithChildren<IProps>): JSX.Element => {
   const auth = useAuth()
   const location = useLocation()
   const roles = auth?.roles ?? []
