@@ -9,6 +9,7 @@ import OneColumnPage from '../pages/OneColumnPage'
 import ThreeColumnPage from '../pages/ThreeColumnPage'
 import TwoColumnPage from '../pages/TwoColumnPage'
 
+const HelpPage = lazy(() => import('../pages/HelpPage'))
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
 const SettingsPage = lazy(() => import('../pages/SettingsPage'))
 const UnauthorizedPage = lazy(() => import('../pages/UnauthorizedPage'))
@@ -25,13 +26,11 @@ const AppRoutes = (): JSX.Element => (
             <Route path="/settings" element={<SettingsPage />} />
           </Route>
         </Route>
-        <Route element={<ThreeColumnPage />}>
-          {/* Public Routes */}
-
-        </Route>
+        <Route element={<ThreeColumnPage />}>{/* Public Routes */}</Route>
         <Route element={<TwoColumnPage />}>
           {/* Public Routes */}
           <Route path="/" element={<HomePage />} />
+          <Route path="/help" element={<HelpPage />} />
           {/* Catch all route */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>

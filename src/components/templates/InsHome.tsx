@@ -3,6 +3,7 @@
 // import InsImage from '../atoms/InsImage'
 // import InsCard from '../molecules/InsCard'
 // import InsFlexCard from '../molecules/InsFlexCard'
+import InsightHeroImage from '../molecules/InsightHeroImage'
 import InsightIndicator from '../molecules/InsightIndicator'
 
 const InsHome = (): JSX.Element => {
@@ -10,6 +11,13 @@ const InsHome = (): JSX.Element => {
 
   return (
     <InsightIndicator isLoading={loading}>
+      <InsightHeroImage
+        altText="Workers in office"
+        image="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+        title="Welcome to Insight"
+        buttonText="Get Started"
+        onClick={() => console.log('Get Started')}
+      />
       {/* <InsFlexCard />
       <div className="py-4" />
       <InsCard>

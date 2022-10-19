@@ -22,10 +22,10 @@
 /* custom components styles */
 @layer components {
   h1 {
-    font-size: 40px !important;
-    font-weight: bold !important;
-    line-height: 48px !important;
-    margin: 0 !important;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 48px;
+    margin: 0;
   }
 
   h2 {
@@ -65,8 +65,8 @@
 
   @media only screen and (max-width: 600px) {
     h1 {
-      font-size: 28px !important;
-      line-height: 36px !important;
+      font-size: 28px;
+      line-height: 36px;
     }
 
     h2 {
