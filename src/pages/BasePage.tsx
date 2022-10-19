@@ -9,8 +9,8 @@ import InsHeader from '../components/organisms/InsHeader'
 import { useOnline } from '../hooks/useOnline'
 import { useAppDispatch, useAppSelector } from '../hooks/useReduxHooks'
 import { useDarkMode } from '../providers/withThemeProvider'
-import type { RootState } from '../store/index'
 import { retrieveAlerts } from '../store/slices/alertsSlice'
+import type { RootState } from '../store/index'
 
 const TRACKING_ID = 'UA-43288618-2'
 ReactGA.initialize(TRACKING_ID)
