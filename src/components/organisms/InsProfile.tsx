@@ -1,57 +1,47 @@
-import { useState } from 'react'
-import { KeyboardArrowDown } from '@mui/icons-material'
-import { Menu, MenuItem } from '@mui/material'
+import type { PropsWithChildren } from 'react'
 import clsx from 'clsx'
-import InsAvatar from '../atoms/InsAvatar'
-import InsBodyText from '../atoms/InsBodyText'
-import InsButton from '../atoms/InsButton'
+import { Link } from 'react-router-dom'
+import InsightAvatar from '../atoms/InsightAvatar'
+import InsightDropDown from '../atoms/InsightDropDown'
+import InsightTypography from '../atoms/InsightTypography'
 
 interface IProps {
   className?: string
 }
 
-const InsProfile = ({ className = '' }: IProps): JSX.Element => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const open = Boolean(anchorEl)
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = (): void => {
-    setAnchorEl(null)
-  }
+const WiseProfile = ({
+  className = '',
+}: PropsWithChildren<IProps>): JSX.Element => {
+  const menuItems = (
+    <>
+      <li>
+        <Link to="/">Profile</Link>
+      </li>
+      <li>
+        <Link to="/">My Account</Link>
+      </li>
+      <li>
+        <Link to="/">Logout</Link>
+      </li>
+    </>
+  )
 
   return (
     <div className={clsx('flex', 'items-center', 'justify-start', className)}>
-      <InsAvatar variant="circular" src="assets/images/me.jpg" />
+      <InsightAvatar variant="square" src="assets/images/user.webp" />
 
-      <InsButton
-        ariaControls={open ? 'basic-menu' : undefined}
-        ariaHasPopup="true"
-        ariaExpanded={open ? true : undefined}
-        onClick={handleClick}
-        endIcon={<KeyboardArrowDown />}
+      <InsightDropDown
+        size="small"
+        variant="ghost"
+        menuItems={menuItems}
+        className="dark:black dark:text-white"
       >
-        <InsBodyText className="pt1 font-bold" inline>
+        <InsightTypography level="body1" bold>
           Steve Pietrek
-        </InsBodyText>
-      </InsButton>
-
-      <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
+        </InsightTypography>
+      </InsightDropDown>
     </div>
   )
 }
 
-export default InsProfile
+export default WiseProfile

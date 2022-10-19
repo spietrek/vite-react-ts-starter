@@ -2,7 +2,13 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "types": ["vite/client", "@types/jest"],
+    "types": [
+      "vite/client",
+      "vite-plugin-pwa/client",
+      "@types/jest",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "allowJs": true,
     "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
@@ -20,9 +26,7 @@
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "paths": {}
   },
   "include": ["src"],
   "exclude": [
@@ -32,8 +36,6 @@
     "scripts",
     "acceptance-tests",
     "webpack",
-    "**/*.test.ts",
-    "**/*.test.tsx",
     "examples"
   ]
 }

@@ -1,17 +1,16 @@
-import InsBodyText from '../atoms/InsBodyText'
-import InsHeading from '../atoms/InsHeading'
-import InsImage from '../atoms/InsImage'
-import InsPill from '../atoms/InsPill'
-import InsCard from '../molecules/InsCard'
-import InsFlexCard from '../molecules/InsFlexCard'
-import InsIndicator from '../molecules/InsIndicator'
+// import InsBodyText from '../atoms/InsBodyText'
+// import InsHeading from '../atoms/InsHeading'
+// import InsImage from '../atoms/InsImage'
+// import InsCard from '../molecules/InsCard'
+// import InsFlexCard from '../molecules/InsFlexCard'
+import InsightIndicator from '../molecules/InsightIndicator'
 
 const InsHome = (): JSX.Element => {
   const loading = false
 
   return (
-    <InsIndicator isLoading={loading}>
-      <InsFlexCard />
+    <InsightIndicator isLoading={loading}>
+      {/* <InsFlexCard />
       <div className="py-4" />
       <InsCard>
         <InsCard.Media>
@@ -49,8 +48,8 @@ const InsHome = (): JSX.Element => {
             <InsPill text="#mountain" />
           </>
         </InsCard.Footer>
-      </InsCard>
-    </InsIndicator>
+      </InsCard> */}
+    </InsightIndicator>
   )
 }
 

@@ -8,3 +8,5 @@ app/styles/index.css
 .env.local.example
 dependencygraph.svg
 coverage
+# Local Netlify folder
+.netlify

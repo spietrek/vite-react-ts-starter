@@ -1,46 +1,39 @@
-import { MenuOutlined } from '@mui/icons-material'
+import type { PropsWithChildren } from 'react'
 import { Link } from 'react-router-dom'
-import InsIconButton from '../atoms/InsIconButton'
-import InsImage from '../atoms/InsImage'
-import InsAppBar from '../molecules/InsAppBar'
-import InsDarkModeToggle from '../molecules/InsDarkModeToggle'
+import InsightImage from '../atoms/InsightImage'
+import InsightAppBar from '../molecules/InsightAppBar'
+import InsightDarkModeToggle from '../molecules/InsightDarkModeToggle'
 import InsProfile from './InsProfile'
 
 interface IProps {
   darkMode: boolean
   onToggleDarkMode: () => void
-  onToggleDrawer: () => void
 }
 
-const InsHeader = ({
+const WiseHeader = ({
   darkMode,
   onToggleDarkMode,
-  onToggleDrawer,
-}: IProps): JSX.Element => {
-  return (
-    <InsAppBar position="static" color="default" style={{ boxShadow: 'none' }}>
-      <div className="xs:block lg:hidden">
-        <InsIconButton style={{ marginRight: '12px' }} onClick={onToggleDrawer}>
-          <MenuOutlined />
-        </InsIconButton>
-      </div>
-
+}: PropsWithChildren<IProps>): JSX.Element => (
+  <InsightAppBar>
+    <div className="mx-2 flex-1 px-2">
       <Link to="/">
-        <InsImage
-          src="assets/images/Insight_logo.svg"
-          alt="Insight"
-          width="200"
+        <InsightImage
+          src="assets/images/insight_logo.png"
+          alt="Wise"
+          width="180"
         />
       </Link>
-      <div className="flex-grow" />
-      <InsDarkModeToggle
-        style={{ marginRight: '8px' }}
-        darkMode={darkMode}
-        onToggle={onToggleDarkMode}
-      />
+    </div>
+    <div className="flex-none">
+      <div className="mr-1">
+        <InsightDarkModeToggle
+          darkMode={darkMode}
+          onToggle={onToggleDarkMode}
+        />
+      </div>
       <InsProfile className="justify-end" />
-    </InsAppBar>
-  )
-}
+    </div>
+  </InsightAppBar>
+)
 
-export default InsHeader
+export default WiseHeader

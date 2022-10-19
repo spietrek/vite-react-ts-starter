@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useState, createContext, useContext } from 'react'
 import axios from 'axios'
-import { USER_ROLE } from '../constants'
-import { timeout } from '../helpers'
+import { timeout } from '../helpers/timeout'
 import AuthDataService from '../services/auth.service'
 import { users } from '../stories/data/users'
+import type { USER_ROLE } from '../constants/user'
 
-export interface AuthResponseType {
+export interface IAuthResponse {
   success: boolean
   error: string | null
 }
-interface AuthContextType {
+interface IAuthContext {
   loading: boolean
   authenticated: boolean
   email: string | null
@@ -21,15 +22,12 @@ interface AuthContextType {
     email: string,
     password: string,
     confirmPassword: string,
-  ) => Promise<AuthResponseType | undefined>
-  login: (
-    email: string,
-    password: string,
-  ) => Promise<AuthResponseType | undefined>
+  ) => Promise<IAuthResponse | undefined>
+  login: (email: string, password: string) => Promise<IAuthResponse | undefined>
   logout: (callback: VoidFunction) => void
 }
 
-const AuthContext = createContext<AuthContextType>(null!)
+const AuthContext = createContext<IAuthContext>(null!)
 
 export const AuthProvider = ({
   children,
@@ -42,20 +40,18 @@ export const AuthProvider = ({
   const [roles, setRoles] = useState<USER_ROLE[]>([])
   const [errorMsg, setErrorMsg] = useState<string>('')
 
-  const isValidUser = (email: string): boolean => {
-    return users.some(user => user.email === email)
-  }
+  const isValidUser = (email: string): boolean =>
+    users.some(user => user.email === email)
 
-  const getUserRoles = (email: string): USER_ROLE[] => {
-    return users.find(user => user.email === email)?.roles ?? []
-  }
+  const getUserRoles = (email: string): USER_ROLE[] =>
+    users.find(user => user.email === email)?.roles ?? []
 
   const register = async (
     userName: string,
     email: string,
     password: string,
     confirmPassword: string,
-  ): Promise<AuthResponseType | undefined> => {
+  ): Promise<IAuthResponse | undefined> => {
     let tempErrorMsg = ''
     setLoading(true)
     try {
@@ -111,7 +107,7 @@ export const AuthProvider = ({
   const login = async (
     email: string,
     password: string,
-  ): Promise<AuthResponseType | undefined> => {
+  ): Promise<IAuthResponse | undefined> => {
     let tempErrorMsg = ''
     setLoading(true)
 
@@ -180,6 +176,4 @@ export const AuthProvider = ({
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
-export const useAuth = (): AuthContextType => {
-  return useContext(AuthContext)
-}
+export const useAuth = (): IAuthContext => useContext(AuthContext)

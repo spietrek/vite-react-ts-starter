@@ -1,12 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import { Outlet, useLocation } from 'react-router-dom'
-import InsDrawer from '../components/molecules/InsDrawer'
+import InsightAlertset from '../components/molecules/InsightAlertset'
+import InsightDrawer from '../components/molecules/InsightDrawer'
+import InsightSideNav from '../components/molecules/InsightSideNav'
 import InsFooter from '../components/organisms/InsFooter'
 import InsHeader from '../components/organisms/InsHeader'
-import InsSideNav from '../components/organisms/InsSideNav'
 import { useOnline } from '../hooks/useOnline'
+import { useAppDispatch, useAppSelector } from '../hooks/useReduxHooks'
 import { useDarkMode } from '../providers/withThemeProvider'
+import type { RootState } from '../store/index'
+import { retrieveAlerts } from '../store/slices/alertsSlice'
 
 const TRACKING_ID = 'UA-43288618-2'
 ReactGA.initialize(TRACKING_ID)
@@ -15,6 +19,16 @@ const BasePage = (): JSX.Element => {
   const location = useLocation()
   const online = useOnline()
   const { darkMode, setDarkMode } = useDarkMode()
+  const dispatch = useAppDispatch()
+  const alertsData = useAppSelector(
+    (state: RootState) => state.storeAlerts.alerts,
+  )
+
+  useEffect(() => {
+    if (online) {
+      void dispatch(retrieveAlerts())
+    }
+  }, [dispatch, online])
 
   useEffect(() => {
     if (online) {
@@ -22,47 +36,33 @@ const BasePage = (): JSX.Element => {
     }
   }, [online, location])
 
-  const [anchorOpen, setAnchorOpen] = useState<boolean>(false)
-
-  const toggleDrawer =
-    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return
-      }
-
-      setAnchorOpen(open)
-    }
-
   const handleToggleDarkMode = (): void => {
     const value = !darkMode
     setDarkMode(value)
   }
 
-  const handleToggleDrawer = (): void => {
-    setAnchorOpen(!anchorOpen)
-  }
-
   return (
-    <main className="min-w-[600px] overflow-x-auto">
-      <InsHeader
-        darkMode={darkMode}
-        onToggleDarkMode={handleToggleDarkMode}
-        onToggleDrawer={handleToggleDrawer}
-      />
+    <main className="bg-[#f0f2f5] text-black dark:bg-black dark:text-white ">
+      <InsightDrawer
+        header={
+          <InsHeader
+            darkMode={darkMode}
+            onToggleDarkMode={handleToggleDarkMode}
+          />
+        }
+        sideNav={<InsightSideNav />}
+      >
+        <div style={{ padding: '12px 16px' }}>
+          <div className="mb-4">
+            <InsightAlertset alerts={alertsData} />
+          </div>
 
-      <div style={{ padding: '12px 16px' }}>
-        <Outlet />
-      </div>
-
-      <InsDrawer anchor="left" open={anchorOpen} onClose={toggleDrawer(false)}>
-        <InsSideNav onMenuClick={handleToggleDrawer} />
-      </InsDrawer>
-
-      <InsFooter />
+          <Outlet />
+          <div className="mt-4">
+            <InsFooter />
+          </div>
+        </div>
+      </InsightDrawer>
     </main>
   )
 }
