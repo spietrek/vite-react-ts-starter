@@ -9,7 +9,7 @@ interface IProps {
   className?: string
 }
 
-const WiseProfile = ({
+const InsProfile = ({
   className = '',
 }: PropsWithChildren<IProps>): JSX.Element => {
   const menuItems = (
@@ -44,4 +44,4 @@ const WiseProfile = ({
   )
 }
 
-export default WiseProfile
+export default InsProfile

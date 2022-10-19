@@ -10,7 +10,7 @@ interface IProps {
   onToggleDarkMode: () => void
 }
 
-const WiseHeader = ({
+const InsHeader = ({
   darkMode,
   onToggleDarkMode,
 }: PropsWithChildren<IProps>): JSX.Element => (
@@ -19,7 +19,7 @@ const WiseHeader = ({
       <Link to="/">
         <InsightImage
           src="assets/images/insight_logo.png"
-          alt="Wise"
+          alt="Insight"
           width="180"
         />
       </Link>
@@ -36,4 +36,4 @@ const WiseHeader = ({
   </InsightAppBar>
 )
 
-export default WiseHeader
+export default InsHeader

@@ -1,6 +1,6 @@
 import InsightTypography from '../atoms/InsightTypography'
 
-const WiseFooter = (): JSX.Element => (
+const InsFooter = (): JSX.Element => (
   <footer className="bg-white dark:bg-gray-900">
     <div className="container mx-auto p-6">
       <div className="lg:flex">
@@ -136,4 +136,4 @@ const WiseFooter = (): JSX.Element => (
   </footer>
 )
 
-export default WiseFooter
+export default InsFooter
