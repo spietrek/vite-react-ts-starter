@@ -38,7 +38,7 @@ const InsightButton = ({
   className,
   disabled = false,
   endIcon = null,
-  fullWidth = true,
+  fullWidth = false,
   loading = false,
   onClick,
   size = 'medium',
