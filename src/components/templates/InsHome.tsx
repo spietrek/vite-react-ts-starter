@@ -5,6 +5,9 @@
 // import InsFlexCard from '../molecules/InsFlexCard'
 import InsightHeroImage from '../molecules/InsightHeroImage'
 import InsightIndicator from '../molecules/InsightIndicator'
+import InsightCardset from '../molecules/InsightCardset'
+import InsightImage from '../atoms/InsightImage'
+import InsightPill from '../atoms/InsightPill'
 
 const InsHome = (): JSX.Element => {
   const loading = false
@@ -17,6 +20,70 @@ const InsHome = (): JSX.Element => {
         title="Welcome to Insight"
         buttonText="Get Started"
         onClick={() => console.log('Get Started')}
+      />
+
+      <div className="mt-4" />
+
+      <InsightCardset
+        cards={[
+          {
+            id: '1',
+            media: (
+              <div className="h-full min-w-[250px]">
+                <InsightImage
+                  src="https://v1.tailwindcss.com/img/card-top.jpg"
+                  alt="mountain"
+                />
+              </div>
+            ),
+            footer: (
+              <div className="flex flex-wrap px-2 pt-2">
+                <InsightPill label="#photography" />
+                <InsightPill label="#travel" />
+                <InsightPill label="#winter" />
+                <InsightPill label="#mountain" />
+              </div>
+            ),
+          },
+          {
+            id: '2',
+            media: (
+              <div className="h-full min-w-[250px]">
+                <InsightImage
+                  src="https://v1.tailwindcss.com/img/card-top.jpg"
+                  alt="mountain"
+                />
+              </div>
+            ),
+            footer: (
+              <div className="flex flex-wrap px-2 pt-2">
+                <InsightPill label="#photography" />
+                <InsightPill label="#travel" />
+                <InsightPill label="#winter" />
+                <InsightPill label="#mountain" />
+              </div>
+            ),
+          },
+          {
+            id: '3',
+            media: (
+              <div className="h-full min-w-[250px]">
+                <InsightImage
+                  src="https://v1.tailwindcss.com/img/card-top.jpg"
+                  alt="mountain"
+                />
+              </div>
+            ),
+            footer: (
+              <div className="flex flex-wrap px-2 pt-2">
+                <InsightPill label="#photography" />
+                <InsightPill label="#travel" />
+                <InsightPill label="#winter" />
+                <InsightPill label="#mountain" />
+              </div>
+            ),
+          },
+        ]}
       />
       {/* <InsFlexCard />
       <div className="py-4" />
