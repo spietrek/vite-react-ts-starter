@@ -1,13 +1,9 @@
-// import InsBodyText from '../atoms/InsBodyText'
-// import InsHeading from '../atoms/InsHeading'
-// import InsImage from '../atoms/InsImage'
-// import InsCard from '../molecules/InsCard'
-// import InsFlexCard from '../molecules/InsFlexCard'
-import InsightHeroImage from '../molecules/InsightHeroImage'
-import InsightIndicator from '../molecules/InsightIndicator'
-import InsightCardset from '../molecules/InsightCardset'
 import InsightImage from '../atoms/InsightImage'
 import InsightPill from '../atoms/InsightPill'
+import InsightTypography from '../atoms/InsightTypography'
+import InsightCardset from '../molecules/InsightCardset'
+import InsightHeroImage from '../molecules/InsightHeroImage'
+import InsightIndicator from '../molecules/InsightIndicator'
 
 const InsHome = (): JSX.Element => {
   const loading = false
@@ -35,6 +31,23 @@ const InsHome = (): JSX.Element => {
                   alt="mountain"
                 />
               </div>
+            ),
+            body: (
+              <>
+                <InsightTypography level="h4" bold className="mb-2">
+                  Mountain View
+                </InsightTypography>
+                <InsightTypography level="body1">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                  exercitationem praesentium nihil. Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit. Voluptatibus quia, nulla!
+                  Maiores et perferendis eaque, exercitationem praesentium
+                  nihil. Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                  exercitationem praesentium
+                </InsightTypography>
+              </>
             ),
             footer: (
               <div className="flex flex-wrap px-2 pt-2">
@@ -85,9 +98,7 @@ const InsHome = (): JSX.Element => {
           },
         ]}
       />
-      {/* <InsFlexCard />
-      <div className="py-4" />
-      <InsCard>
+      {/* <InsCard>
         <InsCard.Media>
           <div className="h-full min-w-[250px]">
             <InsImage

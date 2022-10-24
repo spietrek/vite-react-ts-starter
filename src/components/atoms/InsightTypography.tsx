@@ -43,7 +43,13 @@ const InsightTypography = ({
 
   return (
     <p
-      className={clsx(boldClass, fontSizeClass, textAlignClass, uppercaseClass)}
+      className={clsx(
+        className,
+        boldClass,
+        fontSizeClass,
+        textAlignClass,
+        uppercaseClass,
+      )}
     >
       {children}
     </p>

@@ -26,7 +26,7 @@ const InsightCard = ({ children }: PropsWithChildren<IProps>): JSX.Element => {
   })
 
   return (
-    <div className="min-h-[250px] max-w-sm overflow-hidden rounded bg-white shadow-lg">
+    <div className="min-h-[250px] max-w-sm overflow-hidden rounded bg-gray-300 shadow-lg dark:bg-gray-600">
       {subComponents.map(component => component)}
     </div>
   )
@@ -38,12 +38,12 @@ const Media = (props: PropsWithChildren<IProps>): JSX.Element => (
 InsightCard.Media = Media
 
 const Body = (props: PropsWithChildren<IProps>): JSX.Element => (
-  <div className="px-6 py-4">{props.children}</div>
+  <div className="p-4">{props.children}</div>
 )
 InsightCard.Body = Body
 
 const Footer = (props: PropsWithChildren<IProps>): JSX.Element => (
-  <div className="border-t-2 px-6 pt-4 pb-2">{props.children}</div>
+  <div className="border-t-2 p-2">{props.children}</div>
 )
 InsightCard.Footer = Footer
 

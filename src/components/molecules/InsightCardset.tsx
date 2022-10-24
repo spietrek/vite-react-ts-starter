@@ -13,8 +13,8 @@ const InsightCardset = ({ cards }: IProps): JSX.Element => {
           <div className={index > 0 ? 'ml-4' : ''} key={card.id}>
             <InsightCard>
               <InsightCard.Media>{card.media}</InsightCard.Media>
-              <InsightCard.Media>{card.body}</InsightCard.Media>
-              <InsightCard.Media>{card.footer}</InsightCard.Media>
+              <InsightCard.Body>{card.body}</InsightCard.Body>
+              <InsightCard.Footer>{card.footer}</InsightCard.Footer>
             </InsightCard>
           </div>
         ))}

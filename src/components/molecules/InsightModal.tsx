@@ -48,11 +48,8 @@ const InsightModal = ({
     getChildrenGivenKey(subComponentList, children, 'Title') ?? []
   const contentSubComponents =
     getChildrenGivenKey(subComponentList, children, 'Content') ?? []
-  const actionsSubComponents = getChildrenGivenKey(
-    subComponentList,
-    children,
-    'Actions',
-  )
+  const actionsSubComponents =
+    getChildrenGivenKey(subComponentList, children, 'Actions') ?? []
 
   const titleJsx = titleSubComponents
   const contentJsx = contentSubComponents
@@ -73,8 +70,8 @@ const InsightModal = ({
             <div className="bg-white px-4 pt-5 pb-4 dark:bg-gray-700 sm:p-6 sm:pb-4">
               <div className="flex items-start">
                 <div className="mt-3 text-center sm:mt-0 sm:ml-2 sm:text-left">
-                  {titleJsx}
-                  {contentJsx}
+                  <div className="leading-6">{titleJsx}</div>
+                  <div className="mt-2">{contentJsx}</div>
                 </div>
               </div>
             </div>
@@ -89,19 +86,17 @@ const InsightModal = ({
 }
 
 const Title = (props: IChildrenProps): JSX.Element => (
-  <h3 className="leading-6">{props.children}</h3>
+  <div>{props.children}</div>
 )
 InsightModal.Title = Title
 
 const Content = (props: IChildrenProps): JSX.Element => (
-  <div className="mt-2">{props.children}</div>
+  <div>{props.children}</div>
 )
 InsightModal.Content = Content
 
 const Actions = (props: IChildrenProps): JSX.Element => (
-  <div className="flex flex-row-reverse bg-gray-50 px-2 py-2">
-    {props.children}
-  </div>
+  <div>{props.children}</div>
 )
 InsightModal.Actions = Actions
 
