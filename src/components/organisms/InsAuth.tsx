@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import { Navigate, useLocation, Outlet } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
-import type { USER_ROLE } from '../../constants/user'
+import type { USER_ROLE } from '../../constants/insight/user'
 
 interface IProps {
   allowedRoles: USER_ROLE[]

@@ -5,19 +5,19 @@ import {
   STACK_DIRECTION_CONFIG,
   STACK_ALIGNMENT_CONFIG,
   STACK_JUSTIFICATION_CONFIG,
-} from '../../constants/stack'
+} from '../../constants/common/stack'
 import type {
-  StackAlignments,
-  StackDirections,
-  StackJustifications,
-} from '../../types/common/stack.type'
+  STACK_ALIGNMENT,
+  STACK_DIRECTION,
+  STACK_JUSTIFICATION,
+} from '../../constants/common/stack'
 
 interface IProps {
-  direction?: StackDirections
-  alignItems?: StackAlignments
-  justifyContent?: StackJustifications
+  alignItems?: typeof STACK_ALIGNMENT[number]
   children: React.ReactNode
+  direction?: typeof STACK_DIRECTION[number]
   divider?: boolean
+  justifyContent?: typeof STACK_JUSTIFICATION[number]
 }
 
 const joinChildren = (

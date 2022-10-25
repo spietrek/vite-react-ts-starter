@@ -1,17 +1,17 @@
 import type { PropsWithChildren } from 'react'
 import clsx from 'clsx'
-import { isHeadingTypography } from '../../types/common/typography.type'
+import { isHeadingTypography } from '../../constants/common/typography'
 import type {
-  Alignments,
-  Typographies,
-} from '../../types/common/typography.type'
+  TEXT_ALIGNMENT,
+  TYPOGRAPHY,
+} from '../../constants/common/typography'
 
 interface IProps {
-  align?: Alignments
+  align?: typeof TEXT_ALIGNMENT[number]
   bold?: boolean
   className?: string
   children?: React.ReactNode
-  level?: Typographies
+  level?: typeof TYPOGRAPHY[number]
   uppercase?: boolean
 }
 
@@ -26,8 +26,9 @@ const InsightTypography = ({
   const boldClass = bold ? 'font-bold' : 'font-normal'
   const uppercaseClass = uppercase ? 'uppercase' : ''
   const textAlignClass = align === 'inherit' ? '' : `text-${align}`
+  const isHeadingLevel = isHeadingTypography(level)
 
-  if (isHeadingTypography(level)) {
+  if (isHeadingLevel) {
     const Heading = level
 
     return (

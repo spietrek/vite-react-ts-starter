@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import clsx from 'clsx'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { SIDE_NAV_MENU_ITEMS } from '../../constants/sideNav'
+import { SIDE_NAV_MENU_ITEMS } from '../../constants/insight/sideNav'
 import type { ISideNavMenuItem } from '../../types/common/sideNav.type'
 
 interface IProps {

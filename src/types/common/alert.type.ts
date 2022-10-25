@@ -1,8 +1,8 @@
-export type AlertVariants = 'info' | 'success' | 'warning' | 'error'
+import type { ALERT_VARIANT } from '../../constants/common/alert'
 
 export interface IAlert {
   id: number
   label: string
-  variant: AlertVariants
+  variant: typeof ALERT_VARIANT[number]
   enabled: boolean
 }

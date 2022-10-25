@@ -3,7 +3,7 @@
 import { useState, useRef, useMemo, useEffect } from 'react'
 import ReactQuill, { Quill } from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-import { REDO_ICON, UNDO_ICON } from '../../constants/icons'
+import { REDO_ICON, UNDO_ICON } from '../../constants/common/icons'
 
 const InsightEditor = (): JSX.Element => {
   const reactQuillRef = useRef<ReactQuill>(null)

@@ -1,16 +1,4 @@
-export type ButtonVariants =
-  | 'primary'
-  | 'secondary'
-  | 'accent'
-  | 'info'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'ghost'
-  | 'outline'
-  | 'link'
-
-export type ButtonAriaPopus =
+export type ButtonAriaPopup =
   | boolean
   | 'dialog'
   | 'menu'
@@ -20,7 +8,3 @@ export type ButtonAriaPopus =
   | 'listbox'
   | 'tree'
   | undefined
-
-export type ButtonTypes = 'button' | 'submit' | 'reset'
-
-export type ButtonSizes = 'tiny' | 'small' | 'medium' | 'large'

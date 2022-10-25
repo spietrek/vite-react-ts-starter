@@ -1,3 +1,18 @@
+export const BADGE_VARIANT = [
+  'neutral',
+  'outline',
+  'primary',
+  'secondary',
+  'accent',
+  'ghost',
+  'info',
+  'success',
+  'warning',
+  'error',
+] as const
+
+export const BADGE_SIZE = ['xs', 'sm', 'md', 'lg'] as const
+
 export const BADGE_VARIANT_CONFIG = {
   neutral: '',
   outline: 'badge-outline',

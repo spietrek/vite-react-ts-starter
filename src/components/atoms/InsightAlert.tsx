@@ -1,12 +1,15 @@
 import type { PropsWithChildren } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { clsx } from 'clsx'
-import { ALERT_VARIANT_CONFIG, ALERT_ICON_CONFIG } from '../../constants/alert'
-import type { AlertVariants } from '../../types/common/alert.type'
+import {
+  ALERT_VARIANT_CONFIG,
+  ALERT_ICON_CONFIG,
+} from '../../constants/common/alert'
+import type { ALERT_VARIANT } from '../../constants/common/alert'
 
 interface IProps {
   label: string
-  variant: AlertVariants
+  variant: typeof ALERT_VARIANT[number]
 }
 
 const InsightAlert = ({

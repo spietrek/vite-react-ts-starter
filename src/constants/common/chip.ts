@@ -1,3 +1,11 @@
+export const CHIP_VARIANT = [
+  'ghost',
+  'info',
+  'success',
+  'warning',
+  'error',
+] as const
+
 export const CHIP_BGCOLOR_CONFIG = {
   ghost: 'bg-transparent',
   info: 'bg-info',

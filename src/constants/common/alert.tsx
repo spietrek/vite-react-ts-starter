@@ -5,6 +5,8 @@ import {
   XCircleIcon,
 } from '@heroicons/react/24/outline'
 
+export const ALERT_VARIANT = ['info', 'success', 'warning', 'error'] as const
+
 export const ALERT_VARIANT_CONFIG = {
   info: 'alert-info',
   success: 'alert-success',

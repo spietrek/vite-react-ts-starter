@@ -1,3 +1,27 @@
+export const STACK_DIRECTION = [
+  'row',
+  'row-reverse',
+  'column',
+  'column-reverse',
+] as const
+
+export const STACK_ALIGNMENT = [
+  'flex-start',
+  'center',
+  'flex-end',
+  'stretch',
+  'baseline',
+] as const
+
+export const STACK_JUSTIFICATION = [
+  'flex-start',
+  'center',
+  'flex-end',
+  'space-between',
+  'space-around',
+  'space-evenly',
+] as const
+
 export const STACK_DIRECTION_CONFIG = {
   row: 'flex-row',
   'row-reverse': 'flex-row-reverse',

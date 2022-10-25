@@ -1,10 +1,9 @@
-import type { CellAlignmentType } from './cellAlignment.type'
-
+import type { CELL_ALIGNMENT } from '../../constants/common/cell'
 export interface IColumnDefinition<T, K extends keyof T> {
   key: K
   header: string
   width?: number
-  align?: CellAlignmentType | null
+  align?: typeof CELL_ALIGNMENT[number] | null
   renderCell?: (row: T) => React.ReactNode
 }
 

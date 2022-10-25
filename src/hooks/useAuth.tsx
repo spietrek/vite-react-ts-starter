@@ -5,7 +5,7 @@ import axios from 'axios'
 import { timeout } from '../helpers/timeout'
 import AuthDataService from '../services/auth.service'
 import { users } from '../stories/data/users'
-import type { USER_ROLE } from '../constants/user'
+import type { USER_ROLE } from '../constants/insight/user'
 
 export interface IAuthResponse {
   success: boolean

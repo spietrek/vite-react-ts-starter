@@ -4,15 +4,15 @@ import { clsx } from 'clsx'
 import {
   CHIP_BGCOLOR_CONFIG,
   CHIP_HOVER_BGCOLOR_CONFIG,
-} from '../../constants/chip'
-import type { ChipVariants } from '../../types/common/chip.type'
+} from '../../constants/common/chip'
+import type { CHIP_VARIANT } from '../../constants/common/chip'
 
 interface IProps {
   id: number | string
   label: string
   onClose?: (id: number | string) => void
   onOpen?: (id: number | string) => void
-  variant: ChipVariants
+  variant: typeof CHIP_VARIANT[number]
 }
 
 const InsightChip = ({

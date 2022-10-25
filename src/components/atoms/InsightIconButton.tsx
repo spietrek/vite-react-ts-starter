@@ -3,23 +3,20 @@ import clsx from 'clsx'
 import {
   BUTTON_SIZE_CONFIG,
   BUTTON_VARIANT_CONFIG,
-} from '../../constants/button'
-import type {
-  ButtonAriaPopus,
-  ButtonSizes,
-  ButtonVariants,
-} from '../../types/common/button.type'
+} from '../../constants/common/button'
+import type { BUTTON_SIZE, BUTTON_VARIANT } from '../../constants/common/button'
+import type { ButtonAriaPopup } from '../../types/common/button.type'
 
 interface IProps {
   ariaControls?: string | undefined
-  ariaHasPopup?: ButtonAriaPopus
+  ariaHasPopup?: ButtonAriaPopup
   ariaExpanded?: boolean | undefined
   children?: React.ReactNode | object
   className?: string
   disabled?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-  size?: ButtonSizes
-  variant?: ButtonVariants
+  size?: typeof BUTTON_SIZE[number]
+  variant?: typeof BUTTON_VARIANT[number]
 }
 
 const InsightIconButton = ({

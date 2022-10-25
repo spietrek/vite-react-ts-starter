@@ -4,12 +4,12 @@ import clsx from 'clsx'
 import {
   BUTTON_SIZE_CONFIG,
   BUTTON_VARIANT_CONFIG,
-} from '../../constants/button'
+} from '../../constants/common/button'
 import type {
-  ButtonSizes,
-  ButtonTypes,
-  ButtonVariants,
-} from '../../types/common/button.type'
+  BUTTON_SIZE,
+  BUTTON_TYPE,
+  BUTTON_VARIANT,
+} from '../../constants/common/button'
 
 interface IProps {
   children?: React.ReactNode
@@ -17,9 +17,9 @@ interface IProps {
   disabled?: boolean
   fullWidth?: boolean
   menuItems?: React.ReactNode
-  size?: ButtonSizes
-  type?: ButtonTypes
-  variant?: ButtonVariants
+  size?: typeof BUTTON_SIZE[number]
+  type?: typeof BUTTON_TYPE[number]
+  variant?: typeof BUTTON_VARIANT[number]
 }
 
 const InsightDropDown = ({

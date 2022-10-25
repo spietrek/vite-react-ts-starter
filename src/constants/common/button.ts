@@ -1,3 +1,20 @@
+export const BUTTON_VARIANT = [
+  'primary',
+  'secondary',
+  'accent',
+  'info',
+  'success',
+  'warning',
+  'error',
+  'ghost',
+  'outline',
+  'link',
+] as const
+
+export const BUTTON_TYPE = ['button', 'submit', 'reset'] as const
+
+export const BUTTON_SIZE = ['tiny', 'small', 'medium', 'large'] as const
+
 export const BUTTON_VARIANT_CONFIG = {
   primary: 'btn-primary',
   secondary: 'btn-secondary',
