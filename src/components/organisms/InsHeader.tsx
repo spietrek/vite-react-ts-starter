@@ -19,7 +19,7 @@ const InsHeader = ({
       <Link to="/">
         <InsightImage
           src="assets/images/insight_logo.png"
-          alt="Insight"
+          altText="Insight"
           width="180"
         />
       </Link>

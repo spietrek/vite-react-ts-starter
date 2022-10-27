@@ -1,6 +1,8 @@
 import type { PropsWithChildren } from 'react'
 import InsightButton from '../atoms/InsightButton'
+import InsightImage from '../atoms/InsightImage'
 import InsightTypography from '../atoms/InsightTypography'
+import InsightTextOverlay from './InsightTextOverlay'
 
 interface IProps {
   image: string
@@ -18,12 +20,8 @@ const InsightHeroImage = ({
   onClick,
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <div
-      className="h-[32rem] w-full bg-cover bg-center"
-      aria-label={altText}
-      style={{ backgroundImage: `url(${image})` }}
-    >
-      <div className="flex h-full w-full items-center justify-center bg-gray-900 bg-opacity-50">
+    <InsightTextOverlay
+      renderText={() => (
         <div className="text-center">
           <InsightTypography level="h2" bold uppercase>
             {title}
@@ -37,8 +35,10 @@ const InsightHeroImage = ({
             {buttonText}
           </InsightButton>
         </div>
-      </div>
-    </div>
+      )}
+    >
+      <InsightImage src={image} altText={altText} width="100%" />
+    </InsightTextOverlay>
   )
 }
 

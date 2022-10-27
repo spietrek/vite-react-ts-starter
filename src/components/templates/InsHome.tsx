@@ -28,7 +28,7 @@ const InsHome = (): JSX.Element => {
               <div className="h-full min-w-[250px]">
                 <InsightImage
                   src="https://v1.tailwindcss.com/img/card-top.jpg"
-                  alt="mountain"
+                  altText="mountain"
                 />
               </div>
             ),
@@ -64,7 +64,7 @@ const InsHome = (): JSX.Element => {
               <div className="h-full min-w-[250px]">
                 <InsightImage
                   src="https://v1.tailwindcss.com/img/card-top.jpg"
-                  alt="mountain"
+                  altText="mountain"
                 />
               </div>
             ),
@@ -83,7 +83,7 @@ const InsHome = (): JSX.Element => {
               <div className="h-full min-w-[250px]">
                 <InsightImage
                   src="https://v1.tailwindcss.com/img/card-top.jpg"
-                  alt="mountain"
+                  altText="mountain"
                 />
               </div>
             ),

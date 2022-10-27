@@ -14,4 +14,5 @@ const Template: ComponentStory<typeof InsightImage> = args => (
 export const Basic = Template.bind({})
 Basic.args = {
   src: 'https://source.unsplash.com/random/200x100',
+  altText: 'Random Image',
 }
