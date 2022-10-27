@@ -41,6 +41,10 @@ const BasePage = (): JSX.Element => {
     setDarkMode(value)
   }
 
+  const handleAlertClose = (id: number): void => {
+    console.log('handleAlertClose', id)
+  }
+
   return (
     <main className="bg-[#f0f2f5] text-black dark:bg-black dark:text-white ">
       <InsightDrawer
@@ -54,7 +58,10 @@ const BasePage = (): JSX.Element => {
       >
         <div style={{ padding: '12px 16px' }}>
           <div className="mb-4">
-            <InsightAlertset alerts={alertsData} />
+            <InsightAlertset
+              alerts={alertsData}
+              onAlertClose={handleAlertClose}
+            />
           </div>
 
           <Outlet />

@@ -4,5 +4,5 @@ export interface IAlert {
   id: number
   label: string
   variant: typeof ALERT_VARIANT[number]
-  enabled: boolean
+  visible: boolean
 }
