@@ -23,7 +23,7 @@ const InsightHeroImage = ({
     <InsightTextOverlay
       renderText={() => (
         <div className="text-center">
-          <InsightTypography level="h2" bold uppercase>
+          <InsightTypography level="h2" bold uppercase className="text-white">
             {title}
           </InsightTypography>
           <InsightButton
