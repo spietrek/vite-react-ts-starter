@@ -1,4 +1,4 @@
-import { useIntl, FormattedMessage } from 'react-intl'
+import { useIntl } from 'react-intl'
 import InsightImage from '../atoms/InsightImage'
 import InsightPill from '../atoms/InsightPill'
 import InsightTypography from '../atoms/InsightTypography'
