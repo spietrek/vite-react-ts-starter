@@ -1,4 +1,4 @@
-import InsightImage from './InsightImage'
+import InsightImage from '../InsightImage'
 import type { ComponentStory, ComponentMeta } from '@storybook/react'
 
 export default {

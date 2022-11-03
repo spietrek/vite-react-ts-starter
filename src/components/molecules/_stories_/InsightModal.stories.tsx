@@ -1,5 +1,5 @@
-import InsightTypography from '../atoms/InsightTypography'
-import InsightModal from './InsightModal'
+import InsightTypography from '../../atoms/InsightTypography'
+import InsightModal from '../InsightModal'
 import type { ComponentStory, ComponentMeta } from '@storybook/react'
 
 export default {

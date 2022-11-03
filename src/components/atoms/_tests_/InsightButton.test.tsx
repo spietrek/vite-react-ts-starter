@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import InsightButton from './InsightButton'
+import InsightButton from '../InsightButton'
 
 test('should render a button with text', () => {
   render(<InsightButton>Hello World</InsightButton>)

@@ -1,4 +1,4 @@
-import InsightSpinner from './InsightSpinner'
+import InsightSpinner from '../InsightSpinner'
 import type { ComponentStory, ComponentMeta } from '@storybook/react'
 
 export default {

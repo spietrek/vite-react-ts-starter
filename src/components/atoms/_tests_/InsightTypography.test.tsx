@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import InsightTypography from './InsightTypography'
+import InsightTypography from '../InsightTypography'
 
 test('Show App Component', () => {
   render(<InsightTypography>Hello World</InsightTypography>)

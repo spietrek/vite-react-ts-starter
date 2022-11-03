@@ -1,4 +1,4 @@
-import InsightBadge from './InsightBadge'
+import InsightBadge from '../InsightBadge'
 import type { ComponentStory, ComponentMeta } from '@storybook/react'
 
 export default {
@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof InsightBadge> = args => (
 
 export const Basic = Template.bind({})
 Basic.args = {
-  content: 'Badge',
+  children: 'Badge',
   variant: 'primary',
   size: 'sm',
 }

@@ -1,4 +1,4 @@
-import InsightStack from './InsightStack'
+import InsightStack from '../InsightStack'
 import type { ComponentStory, ComponentMeta } from '@storybook/react'
 
 export default {
