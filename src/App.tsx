@@ -7,7 +7,6 @@ import {
   getMessages,
   InsightIntlProvider,
 } from './providers/InsightIntlProvider'
-import { withThemeProvider } from './providers/withThemeProvider'
 import AppRoutes from './routes'
 import { store } from './store'
 import type { ILocaleMessages } from './providers/InsightIntlProvider'
@@ -49,4 +48,4 @@ const App = (): JSX.Element => {
   )
 }
 
-export default withThemeProvider(App)
+export default App

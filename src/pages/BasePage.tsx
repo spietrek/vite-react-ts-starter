@@ -8,7 +8,6 @@ import InsFooter from '../components/organisms/InsFooter'
 import InsHeader from '../components/organisms/InsHeader'
 import { useOnline } from '../hooks/useOnline'
 import { useAppDispatch, useAppSelector } from '../hooks/useReduxHooks'
-import { useDarkMode } from '../providers/withThemeProvider'
 import { retrieveAlerts } from '../store/slices/alertsSlice'
 import type { RootState } from '../store/index'
 
@@ -18,7 +17,6 @@ ReactGA.initialize(TRACKING_ID)
 const BasePage = (): JSX.Element => {
   const location = useLocation()
   const online = useOnline()
-  const { darkMode, setDarkMode } = useDarkMode()
   const dispatch = useAppDispatch()
   const alertsData = useAppSelector(
     (state: RootState) => state.storeAlerts.alerts,
@@ -36,26 +34,13 @@ const BasePage = (): JSX.Element => {
     }
   }, [online, location])
 
-  const handleToggleDarkMode = (): void => {
-    const value = !darkMode
-    setDarkMode(value)
-  }
-
   const handleAlertClose = (id: number): void => {
     console.log('handleAlertClose', id)
   }
 
   return (
     <main className="bg-[#f0f2f5] text-black dark:bg-black dark:text-white ">
-      <InsightDrawer
-        header={
-          <InsHeader
-            darkMode={darkMode}
-            onToggleDarkMode={handleToggleDarkMode}
-          />
-        }
-        sideNav={<InsightSideNav />}
-      >
+      <InsightDrawer header={<InsHeader />} sideNav={<InsightSideNav />}>
         <div style={{ padding: '12px 16px' }}>
           <div className="mb-4">
             <InsightAlertset
