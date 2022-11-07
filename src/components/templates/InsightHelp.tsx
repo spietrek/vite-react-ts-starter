@@ -1,6 +1,6 @@
 import InsightHeroImage from '../molecules/InsightHeroImage'
 
-const InsHelp = (): JSX.Element => (
+const InsightHelp = (): JSX.Element => (
   <InsightHeroImage
     image="https://unsplash.com/photos/_UIVmIBB3JU/download?force=true&w=640"
     altText="Help Image"
@@ -10,4 +10,4 @@ const InsHelp = (): JSX.Element => (
   />
 )
 
-export default InsHelp
+export default InsightHelp

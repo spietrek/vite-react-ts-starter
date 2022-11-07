@@ -6,7 +6,7 @@ import InsightCardset from '../molecules/InsightCardset'
 import InsightHeroImage from '../molecules/InsightHeroImage'
 import InsightIndicator from '../molecules/InsightIndicator'
 
-const InsHome = (): JSX.Element => {
+const InsightHome = (): JSX.Element => {
   const intl = useIntl()
   const loading = false
 
@@ -104,4 +104,4 @@ const InsHome = (): JSX.Element => {
   )
 }
 
-export default InsHome
+export default InsightHome

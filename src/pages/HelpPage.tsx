@@ -1,5 +1,5 @@
-import InsHelp from '../components/templates/InsHelp'
+import InsightHelp from '../components/templates/InsightHelp'
 
-const HelpPage = (): JSX.Element => <InsHelp />
+const HelpPage = (): JSX.Element => <InsightHelp />
 
 export default HelpPage

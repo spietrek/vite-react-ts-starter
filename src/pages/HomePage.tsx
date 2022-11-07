@@ -1,7 +1,7 @@
-import InsHome from '../components/templates/InsHome'
+import InsightHome from '../components/templates/InsightHome'
 
 const HomePage = (): JSX.Element => {
-  return <InsHome />
+  return <InsightHome />
 }
 
 export default HomePage
