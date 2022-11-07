@@ -11,7 +11,18 @@ const withProvider = story => (
   </IntlProvider>
 )
 
+const withBasePage = story => (
+  <main className="bg-[#f0f2f5] text-black dark:bg-black dark:text-white ">
+    {story()}
+  </main>
+)
+
 addDecorator(withProvider)
+addDecorator(withBasePage)
+
+export const globalTypes = {
+  darkMode: true,
+}
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
