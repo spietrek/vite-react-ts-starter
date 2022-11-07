@@ -17,12 +17,6 @@ interface IAuthContext {
   email: string | null
   roles: USER_ROLE[]
   errorMsg: string
-  register: (
-    userName: string,
-    email: string,
-    password: string,
-    confirmPassword: string,
-  ) => Promise<IAuthResponse | undefined>
   login: (email: string, password: string) => Promise<IAuthResponse | undefined>
   logout: (callback: VoidFunction) => void
 }
@@ -45,64 +39,6 @@ export const AuthProvider = ({
 
   const getUserRoles = (email: string): USER_ROLE[] =>
     users.find(user => user.email === email)?.roles ?? []
-
-  const register = async (
-    userName: string,
-    email: string,
-    password: string,
-    confirmPassword: string,
-  ): Promise<IAuthResponse | undefined> => {
-    let tempErrorMsg = ''
-    setLoading(true)
-    try {
-      const tempUser = {
-        userName,
-        email: 'eve.holt@reqres.in',
-        password: 'cityslicka',
-      }
-
-      if (
-        password.localeCompare(confirmPassword, 'en', {
-          sensitivity: 'case',
-        }) !== 0
-      ) {
-        tempErrorMsg = 'Passwords do not match'
-        return { success: false, error: tempErrorMsg }
-      }
-
-      await timeout(500)
-      const res = await AuthDataService.login(tempUser)
-      if (res.status === 200) {
-        setEmail(email)
-        tempErrorMsg = ''
-
-        return { success: true, error: null }
-      } else {
-        tempErrorMsg = 'Invalid User'
-
-        return { success: false, error: tempErrorMsg }
-      }
-    } catch (err) {
-      if (axios.isAxiosError(err)) {
-        if (err.response == null) {
-          tempErrorMsg = 'No Server Response'
-        } else if (err.response.status === 400) {
-          const { data } = err.response
-          const { error } = data as { error: string }
-          tempErrorMsg = error ?? 'Missing Email or Password'
-        } else if (err.response.status === 401) {
-          tempErrorMsg = 'Invalid credentials'
-        }
-      } else {
-        tempErrorMsg = 'Unknown Error'
-      }
-
-      return { success: false, error: tempErrorMsg }
-    } finally {
-      setErrorMsg(tempErrorMsg)
-      setLoading(false)
-    }
-  }
 
   const login = async (
     email: string,
@@ -168,7 +104,6 @@ export const AuthProvider = ({
     email,
     roles,
     errorMsg,
-    register,
     login,
     logout,
   }
