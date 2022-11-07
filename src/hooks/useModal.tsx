@@ -1,23 +1,26 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
-interface IModalResponse {
-  isShowing: boolean
-  setIsShowing: (value: boolean) => void
-  toggle: () => void
+export interface IUseModalReturnType {
+  visible: boolean
+  show: () => void
+  close: () => void
 }
 
-const useModal = (): IModalResponse => {
-  const [isShowing, setIsShowing] = useState(false)
+export interface IUseModalProps {
+  defaultVisible?: boolean
+}
 
-  const toggle = (): void => {
-    setIsShowing(!isShowing)
-  }
+export const useModal = ({
+  defaultVisible = false,
+}: IUseModalProps = {}): IUseModalReturnType => {
+  const [visible, setVisible] = useState(defaultVisible)
+
+  const show = useCallback(() => setVisible(true), [])
+  const close = useCallback(() => setVisible(false), [])
 
   return {
-    isShowing,
-    setIsShowing,
-    toggle,
+    visible,
+    show,
+    close,
   }
 }
-
-export default useModal
