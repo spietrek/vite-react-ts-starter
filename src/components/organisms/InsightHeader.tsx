@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import InsightImage from '../atoms/InsightImage'
 import InsightAppBar from '../molecules/InsightAppBar'
 import InsightDarkModeToggle from '../molecules/InsightDarkModeToggle'
-import InsProfile from './InsProfile'
+import InsightProfile from './InsightProfile'
 
-const InsHeader = (): JSX.Element => (
+const InsightHeader = (): JSX.Element => (
   <InsightAppBar>
     <div className="mx-2 flex-1 px-2">
       <Link to="/">
@@ -19,9 +19,9 @@ const InsHeader = (): JSX.Element => (
       <div className="mr-1">
         <InsightDarkModeToggle />
       </div>
-      <InsProfile className="justify-end" />
+      <InsightProfile className="justify-end" />
     </div>
   </InsightAppBar>
 )
 
-export default InsHeader
+export default InsightHeader

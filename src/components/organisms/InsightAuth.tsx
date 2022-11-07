@@ -7,7 +7,9 @@ interface IProps {
   allowedRoles: USER_ROLE[]
 }
 
-const InsAuth = ({ allowedRoles }: PropsWithChildren<IProps>): JSX.Element => {
+const InsightAuth = ({
+  allowedRoles,
+}: PropsWithChildren<IProps>): JSX.Element => {
   const auth = useAuth()
   const location = useLocation()
   const roles = auth?.roles ?? []
@@ -26,4 +28,4 @@ const InsAuth = ({ allowedRoles }: PropsWithChildren<IProps>): JSX.Element => {
   return <Outlet />
 }
 
-export default InsAuth
+export default InsightAuth

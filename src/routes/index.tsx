@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import InsightSpinner from '../components/atoms/InsightSpinner'
-import InsAuth from '../components/organisms/InsAuth'
+import InsightAuth from '../components/organisms/InsightAuth'
 import { USER_ROLE as UR } from '../constants/insight/user'
 import BasePage from '../pages/BasePage'
 import HomePage from '../pages/HomePage'
@@ -22,7 +22,7 @@ const AppRoutes = (): JSX.Element => (
           {/* Public Routes */}
           <Route path="/unauthorized" element={<UnauthorizedPage />} />
           {/* Admin Routes */}
-          <Route element={<InsAuth allowedRoles={[UR.Admin]} />}>
+          <Route element={<InsightAuth allowedRoles={[UR.Admin]} />}>
             <Route path="/settings" element={<SettingsPage />} />
           </Route>
         </Route>

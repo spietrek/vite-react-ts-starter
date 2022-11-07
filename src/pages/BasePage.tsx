@@ -4,8 +4,8 @@ import { Outlet, useLocation } from 'react-router-dom'
 import InsightAlertset from '../components/molecules/InsightAlertset'
 import InsightDrawer from '../components/molecules/InsightDrawer'
 import InsightSideNav from '../components/molecules/InsightSideNav'
-import InsFooter from '../components/organisms/InsFooter'
-import InsHeader from '../components/organisms/InsHeader'
+import InsightFooter from '../components/organisms/InsightFooter'
+import InsightHeader from '../components/organisms/InsightHeader'
 import { useOnline } from '../hooks/useOnline'
 import { useAppDispatch, useAppSelector } from '../hooks/useReduxHooks'
 import { retrieveAlerts } from '../store/slices/alertsSlice'
@@ -40,7 +40,7 @@ const BasePage = (): JSX.Element => {
 
   return (
     <main className="bg-[#f0f2f5] text-black dark:bg-black dark:text-white ">
-      <InsightDrawer header={<InsHeader />} sideNav={<InsightSideNav />}>
+      <InsightDrawer header={<InsightHeader />} sideNav={<InsightSideNav />}>
         <div style={{ padding: '12px 16px' }}>
           <div className="mb-4">
             <InsightAlertset
@@ -51,7 +51,7 @@ const BasePage = (): JSX.Element => {
 
           <Outlet />
           <div className="mt-4">
-            <InsFooter />
+            <InsightFooter />
           </div>
         </div>
       </InsightDrawer>
