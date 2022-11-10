@@ -3,6 +3,7 @@ export interface IColumnDefinition<T, K extends keyof T> {
   key: K
   header: string
   width?: number
+  visible?: boolean
   align?: typeof CELL_ALIGNMENT[number] | null
   renderCell?: (row: T) => React.ReactNode
 }
