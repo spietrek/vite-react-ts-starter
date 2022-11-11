@@ -8,7 +8,9 @@ export default {
 } as ComponentMeta<typeof InsightDropDown>
 
 const Template: ComponentStory<typeof InsightDropDown> = args => (
-  <InsightDropDown {...args} />
+  <div style={{ minHeight: '150px' }}>
+    <InsightDropDown {...args} />
+  </div>
 )
 
 const menuItems = (

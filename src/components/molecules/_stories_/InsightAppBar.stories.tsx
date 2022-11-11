@@ -14,11 +14,16 @@ export default {
 } as ComponentMeta<typeof InsightAppBar>
 
 const Template: ComponentStory<typeof InsightAppBar> = args => (
-  <InsightAppBar {...args}>
+  <InsightAppBar {...args} />
+)
+
+export const Basic = Template.bind({})
+Basic.args = {
+  children: (
     <>
       <div className="mx-2 flex-1 px-2">
         <InsightImage
-          src="assets/images/insight_logo.png"
+          src="assets/images/sos_logo.webp"
           altText="Wise"
           width="270"
         />
@@ -46,8 +51,5 @@ const Template: ComponentStory<typeof InsightAppBar> = args => (
         </div>
       </div>
     </>
-  </InsightAppBar>
-)
-
-export const Basic = Template.bind({})
-Basic.args = {}
+  ),
+}
