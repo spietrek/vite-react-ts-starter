@@ -65,20 +65,24 @@ export const academicColumns: Array<
     key: 'score',
     header: 'Grade',
     align: 'center',
+    width: 125,
   },
   {
     key: 'term',
     header: 'Term',
     align: 'center',
+    width: 125,
   },
   {
     key: 'year',
     header: 'Year',
     align: 'center',
+    width: 125,
   },
   {
     key: 'gradeLevel',
     header: 'Grade Level',
     align: 'center',
+    width: 125,
   },
 ]
