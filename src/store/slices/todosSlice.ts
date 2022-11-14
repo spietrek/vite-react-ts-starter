@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import { timeout } from '../../helpers/timeout'
-import TodosDataService, { ITodosData } from '../../services/todos.service'
+import TodosDataService from '../../services/todos.service'
 import type { RootState } from '..'
+import type { ITodosData } from '../../services/todos.service'
 
 interface ITodosState {
   isError: boolean

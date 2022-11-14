@@ -8,7 +8,7 @@ import {
   InsightIntlProvider,
 } from './providers/InsightIntlProvider'
 import AppRoutes from './routes'
-import { store } from './store'
+import { setupStore } from './store'
 import type { ILocaleMessages } from './providers/InsightIntlProvider'
 import './styles/index.css'
 
@@ -28,6 +28,8 @@ const App = (): JSX.Element => {
   if (!loaded) {
     return <div>Loading...</div>
   }
+
+  const store = setupStore({})
 
   return (
     <InsightIntlProvider

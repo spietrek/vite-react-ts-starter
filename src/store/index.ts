@@ -1,16 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import alertsReducer from './slices/alertsSlice'
 import todosReducer from './slices/todosSlice'
+import type { PreloadedState } from '@reduxjs/toolkit'
 
-const reducers = {
+export const storeReducers = combineReducers({
   storeAlerts: alertsReducer,
   storeTodos: todosReducer,
-}
-
-export const store = configureStore({
-  reducer: reducers,
-  devTools: true,
 })
 
-export type AppDispatch = typeof store.dispatch
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof storeReducers>
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer: storeReducers,
+    preloadedState,
+    devTools: true,
+  })
+}
+
+export type AppStore = ReturnType<typeof setupStore>
+export type AppDispatch = AppStore['dispatch']
