@@ -4,25 +4,25 @@
       "id": 1,
       "label": "This is a demo site. Please do not enter any personal information.",
       "variant": "info",
-      "enabled": true
+      "visible": true
     },
     {
       "id": 2,
       "label": "This is a demo site. Please do not enter any personal information.",
       "variant": "success",
-      "enabled": false
+      "visible": false
     },
     {
       "id": 3,
       "label": "This is a demo site. Please do not enter any personal information.",
       "variant": "warning",
-      "enabled": false
+      "visible": false
     },
     {
       "id": 4,
       "label": "This is a demo site. Please do not enter any personal information.",
       "variant": "error",
-      "enabled": false
+      "visible": false
     }
   ]
 }
