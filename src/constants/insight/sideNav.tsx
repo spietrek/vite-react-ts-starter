@@ -1,4 +1,8 @@
-import { HomeIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
+import {
+  DocumentIcon,
+  HomeIcon,
+  QuestionMarkCircleIcon,
+} from '@heroicons/react/24/outline'
 import type { ISideNavMenuItem } from '../../types/common/sideNav.type'
 
 export const SIDE_NAV_MENU_ITEMS: ISideNavMenuItem[] = [
@@ -7,6 +11,12 @@ export const SIDE_NAV_MENU_ITEMS: ISideNavMenuItem[] = [
     label: 'Home',
     key: '/',
     icon: <HomeIcon className="h-5 w-5" />,
+  },
+  {
+    active: true,
+    label: 'Reports',
+    key: '/reports',
+    icon: <DocumentIcon className="h-5 w-5" />,
   },
   {
     active: true,

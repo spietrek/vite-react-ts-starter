@@ -6,6 +6,7 @@ import { USER_ROLE as UR } from '../constants/insight/user'
 import BasePage from '../pages/BasePage'
 import HomePage from '../pages/HomePage'
 import OneColumnPage from '../pages/OneColumnPage'
+import ReportsPage from '../pages/ReportsPage'
 import ThreeColumnPage from '../pages/ThreeColumnPage'
 import TwoColumnPage from '../pages/TwoColumnPage'
 
@@ -30,6 +31,7 @@ const AppRoutes = (): JSX.Element => (
         <Route element={<TwoColumnPage />}>
           {/* Public Routes */}
           <Route path="/" element={<HomePage />} />
+          <Route path="/reports" element={<ReportsPage />} />
           <Route path="/help" element={<HelpPage />} />
           {/* Catch all route */}
           <Route path="*" element={<NotFoundPage />} />

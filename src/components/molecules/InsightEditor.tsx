@@ -4,17 +4,23 @@ import { useState, useRef, useMemo, useEffect } from 'react'
 import ReactQuill, { Quill } from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { REDO_ICON, UNDO_ICON } from '../../constants/common/icons'
+import { useStrings } from '../../hooks/useStrings'
 
 const InsightEditor = (): JSX.Element => {
   const reactQuillRef = useRef<ReactQuill>(null)
   const [value, setValue] = useState('')
+  const { characterCount, wordCount, handlers } = useStrings({
+    initialState: value,
+    handleHtmlTags: true,
+  })
 
   useEffect(() => {
     const content =
       localStorage.getItem('insight_editor_content') ??
       '<p>Today I worked on the following features:</p><ol><li>Assessment page</li><li>Alert components</li></ol>'
     setValue(content)
-  }, [])
+    handlers.update(content)
+  }, [handlers])
 
   // eslint-disable-next-line testing-library/no-debugging-utils
   Quill.debug('error')
@@ -28,6 +34,7 @@ const InsightEditor = (): JSX.Element => {
 
   const handleChangeText = (content: string): void => {
     setValue(content)
+    handlers.update(content)
     localStorage.setItem('insight_editor_content', content)
   }
 
@@ -92,15 +99,25 @@ const InsightEditor = (): JSX.Element => {
   ]
 
   return (
-    <ReactQuill
-      placeholder="Please enter your monthly progress report..."
-      ref={reactQuillRef}
-      theme="snow"
-      value={value}
-      onChange={handleChangeText}
-      modules={modules}
-      formats={formats}
-    />
+    <>
+      <ReactQuill
+        placeholder="Please enter your monthly progress report..."
+        ref={reactQuillRef}
+        theme="snow"
+        value={value}
+        onChange={handleChangeText}
+        modules={modules}
+        formats={formats}
+      />
+      <div className="mt-4 flex">
+        <span className="text-sm text-gray-500">
+          Character count: {characterCount}
+        </span>
+        <span className="ml-2 text-sm text-gray-500">
+          Word count: {wordCount}
+        </span>
+      </div>
+    </>
   )
 }
 
