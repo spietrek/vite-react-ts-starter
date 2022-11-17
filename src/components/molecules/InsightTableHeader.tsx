@@ -12,14 +12,18 @@ const InsightTableHeader = <T, K extends keyof T>({
       }
 
       return (
-        <th key={`headCell-${index}`} style={style}>
+        <th
+          key={`headCell-${index}`}
+          className="bg-[#f0f2f5] dark:bg-black"
+          style={style}
+        >
           {column.header}
         </th>
       )
     })
 
   return (
-    <thead>
+    <thead data-testid="insightTableHeader">
       <tr>{headers}</tr>
     </thead>
   )

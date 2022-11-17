@@ -11,7 +11,11 @@ const InsightTable = <T, K extends keyof T>({
   columns,
 }: ITableProps<T, K>): JSX.Element => {
   return (
-    <table className="w-full table-auto" style={style}>
+    <table
+      className="w-full table-auto bg-white dark:bg-black"
+      style={style}
+      data-testid="insightTable"
+    >
       <InsightTableHeader columns={columns} />
       <InsightTableRows data={data} columns={columns} />
     </table>
