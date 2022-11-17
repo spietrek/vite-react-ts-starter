@@ -12,6 +12,6 @@ describe('InsightTabButtonset component', () => {
   }
   test('should render set of tab buttons', () => {
     render(<InsightTabButtonset {...args} />)
-    expect(screen.getByTestId('tabButtonSet')).toBeInTheDocument()
+    expect(screen.getByTestId('insightTabButtonset')).toBeInTheDocument()
   })
 })

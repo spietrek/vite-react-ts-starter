@@ -27,7 +27,7 @@ const InsightDropDown = ({
   className = '',
   disabled = false,
   fullWidth = false,
-  menuItems = null,
+  menuItems,
   size = 'medium',
   variant = 'primary',
 }: PropsWithChildren<IProps>): JSX.Element => {
@@ -48,13 +48,14 @@ const InsightDropDown = ({
     <div className="dropdown-end dropdown">
       <label tabIndex={0} className={classNames}>
         {children}
-        <div className="w-6">
+        <div className="w-6" data-testid="insightDropDown-icon">
           <ChevronDownIcon className="h-5 w-5" />
         </div>
       </label>
       <ul
         tabIndex={0}
-        className="dropdown-content menu menu-compact m-0 w-full bg-white p-2 text-black dark:bg-gray-900 dark:text-white"
+        className="text-neutral-800 dropdown-content menu menu-compact m-0 w-full bg-white p-2"
+        data-testid="insightDropDown-menuItems"
       >
         {menuItems}
       </ul>

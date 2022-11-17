@@ -15,7 +15,7 @@ const InsightChipset = ({
 }: PropsWithChildren<IProps>): JSX.Element => (
   <div className="flex">
     {chips.map(chip => (
-      <div key={chip.id} className="mr-2">
+      <div key={chip.id} className="mr-2" data-testid="insightChipset">
         <InsightChip
           id={chip.id}
           label={chip.label}

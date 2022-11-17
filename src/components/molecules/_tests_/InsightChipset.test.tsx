@@ -15,6 +15,6 @@ describe('InsightChipSet component', () => {
 
   test('should render attachment chips', () => {
     render(<InsightChipset {...args} />)
-    expect(screen.getByTestId('insightChipContainer')).toBeInTheDocument()
+    expect(screen.getByTestId('insightChipset')).toBeInTheDocument()
   })
 })

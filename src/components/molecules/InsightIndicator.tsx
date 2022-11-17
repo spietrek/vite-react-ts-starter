@@ -12,13 +12,16 @@ const InsightIndicator = ({
 }: PropsWithChildren<IProps>): JSX.Element => {
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center p-4">
+      <div
+        className="flex items-center justify-center p-4"
+        data-testid="insightIndicator"
+      >
         <InsightSpinner />
       </div>
     )
   }
 
-  return <div>{children}</div>
+  return <div data-testid="insightIndicator-children">{children}</div>
 }
 
 export default InsightIndicator

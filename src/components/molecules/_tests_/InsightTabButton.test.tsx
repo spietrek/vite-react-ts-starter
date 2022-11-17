@@ -9,14 +9,14 @@ describe('InsightGaugeset component', () => {
   }
   test('should render tab button', () => {
     render(<InsightTabButton {...args} />)
-    expect(screen.getByTestId('tabButton')).toBeInTheDocument()
+    expect(screen.getByTestId('insightTabButton')).toBeInTheDocument()
     expect(screen.getByText('Tab Label')).toBeInTheDocument()
   })
 
   describe('tab unselected', () => {
     test('should change variant of tab button', () => {
       render(<InsightTabButton {...args} currentTab={false} />)
-      expect(screen.getByTestId('tabButton')).toBeInTheDocument()
+      expect(screen.getByTestId('insightTabButton')).toBeInTheDocument()
       expect(screen.getByText('Tab Label')).toBeInTheDocument()
     })
   })

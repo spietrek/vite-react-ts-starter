@@ -14,9 +14,9 @@ const InsightDarkModeToggle = (): JSX.Element => {
   }
 
   const icon = darkMode ? (
-    <SunIcon className="h-6 w-6" />
+    <SunIcon className="h-6 w-6" data-testid="insightLightMode" />
   ) : (
-    <MoonIcon className="h-6 w-6" />
+    <MoonIcon className="h-6 w-6" data-testid="insightDarkMode" />
   )
 
   return (

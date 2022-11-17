@@ -7,13 +7,13 @@ describe('InsightProgress component', () => {
   }
   test('should render progress bar', () => {
     render(<InsightProgress {...args} />)
-    expect(screen.getByTestId('progress-container')).toBeInTheDocument()
+    expect(screen.getByTestId('insightProgress')).toBeInTheDocument()
   })
 
   describe('progress bar if value is NaN', () => {
     test('should render progress bar with value of 0', () => {
       render(<InsightProgress {...args} value={NaN} />)
-      expect(screen.getByTestId('progress-container')).toBeInTheDocument()
+      expect(screen.getByTestId('insightProgress')).toBeInTheDocument()
     })
   })
 })

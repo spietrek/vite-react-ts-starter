@@ -26,7 +26,7 @@ const InsightCard = ({ children }: PropsWithChildren<IProps>): JSX.Element => {
   })
 
   return (
-    <div className="min-h-[250px] max-w-sm overflow-hidden rounded bg-gray-300 shadow-lg dark:bg-gray-600">
+    <div className="min-h-[250px] max-w-sm overflow-hidden rounded bg-gray-300 shadow-lg">
       {subComponents.map(component => component)}
     </div>
   )

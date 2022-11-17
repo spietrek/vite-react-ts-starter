@@ -22,33 +22,35 @@ const InsightSideNav = ({
   }
 
   return (
-    <div className="py-4">
-      <div id="insight_sidenav">
-        <ul className="menu m-0 w-full p-0">
-          {SIDE_NAV_MENU_ITEMS.filter(
-            (item: ISideNavMenuItem) => item.active,
-          ).map((item: ISideNavMenuItem) => {
-            const key = item !== null ? item.key : ''
-            const isSelected = location.pathname === key
-            const classNames = clsx(
-              'h-[50px] mx-2',
-              'bg-white text-black',
-              'dark:text-white dark:bg-gray-900',
-              'cursor-pointer',
-              isSelected ? '!bg-[#dbf4fc] !text-black' : '',
-            )
+    <div
+      id="insight_sidenav"
+      data-testid="insightSideNav"
+      className="flex h-full flex-col justify-between pb-6"
+    >
+      <ul className="menu m-0 w-full p-0">
+        {SIDE_NAV_MENU_ITEMS.filter(
+          (item: ISideNavMenuItem) => item.active,
+        ).map((item: ISideNavMenuItem) => {
+          const key = item !== null ? item.key : ''
+          const isSelected = location.pathname === key
+          const classNames = clsx(
+            'h-[50px] mx-2',
+            'bg-white text-black',
+            'dark:text-white dark:bg-gray-900',
+            'cursor-pointer',
+            isSelected ? '!bg-[#dbf4fc] !text-black' : '',
+          )
 
-            return (
-              <li key={key}>
-                <a className={classNames} onClick={() => handleLinkClick(key)}>
-                  {item.icon}
-                  {item.label}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+          return (
+            <li key={key}>
+              <a className={classNames} onClick={() => handleLinkClick(key)}>
+                {item.icon}
+                {item.label}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }

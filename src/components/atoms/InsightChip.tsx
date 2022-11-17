@@ -10,17 +10,17 @@ import type { CHIP_VARIANT } from '../../constants/common/chip'
 interface IProps {
   id: number | string
   label: string
-  onClose?: (id: number | string) => void
-  onOpen?: (id: number | string) => void
   variant: typeof CHIP_VARIANT[number]
+  onOpen?: (id: number | string) => void
+  onClose?: (id: number | string) => void
 }
 
 const InsightChip = ({
   id,
-  label = '',
-  onClose,
+  label,
+  variant,
   onOpen,
-  variant = 'ghost',
+  onClose,
 }: PropsWithChildren<IProps>): JSX.Element => {
   const variantClass = CHIP_BGCOLOR_CONFIG[variant]
   const hoverClass = CHIP_HOVER_BGCOLOR_CONFIG[variant]
@@ -45,12 +45,20 @@ const InsightChip = ({
   }
 
   return (
-    <div className={classNames}>
-      <div className="max-w-full text-sm leading-none" onClick={handleOpen}>
+    <div className={classNames} data-testid="insightChip">
+      <div
+        className="max-w-full text-sm leading-none"
+        onClick={handleOpen}
+        data-testid="insightChip-text"
+      >
         {label}
       </div>
-      <div className="flex flex-auto flex-row-reverse" onClick={handleClose}>
-        <XMarkIcon className="ml-2 h-4 w-4 cursor-pointer rounded-full hover:text-red-500" />
+      <div
+        className="flex flex-auto flex-row-reverse"
+        onClick={handleClose}
+        data-testid="insightChip-closeButton"
+      >
+        <XMarkIcon className="hover:text-fail ml-2 h-4 w-4 cursor-pointer rounded-full" />
       </div>
     </div>
   )

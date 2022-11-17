@@ -29,14 +29,20 @@ const InsightAlert = ({
   }
 
   return (
-    <div className={classNames}>
+    <div className={classNames} data-testid="insightAlert">
       <div className="flex">
-        <div className="w-[30px]">{icon}</div>
+        <div className="w-[30px]" data-testid="insightAlert-icon">
+          {icon}
+        </div>
         {label}
       </div>
       <div className="flex">
-        <button className="btn btn-ghost btn-sm">View</button>
-        <button className="btn btn-ghost btn-sm" onClick={handleClose}>
+        <button className="btn-ghost btn-sm btn">View</button>
+        <button
+          className="btn-ghost btn-sm btn"
+          onClick={handleClose}
+          data-testid="insightAlert-closeButton"
+        >
           <XMarkIcon className="h-4 w-4 cursor-pointer rounded-full hover:text-red-500" />
         </button>
       </div>

@@ -11,7 +11,7 @@ const InsightTabButtonset = ({
 }: PropsWithChildren<IProps>): JSX.Element => (
   <>
     {items.map((item, index) => (
-      <div key={index} className="w-1/3">
+      <div key={index} className="w-1/3" data-testid="insightTabButtonset">
         <InsightTabButton
           currentTab={item.currentTab}
           label={item.label}

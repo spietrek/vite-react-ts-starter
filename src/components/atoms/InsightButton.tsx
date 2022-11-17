@@ -72,10 +72,19 @@ const InsightButton = ({
       style={style}
       tabIndex={tabIndex}
       type={type}
+      data-testid="insightButton"
     >
-      {startIcon !== null && <div className="w-6">{startIcon}</div>}
+      {startIcon !== null && (
+        <div className="w-6" data-testid="insightButton-startIcon">
+          {startIcon}
+        </div>
+      )}
       {children}
-      {endIcon !== null && <div className="w-6">{endIcon}</div>}
+      {endIcon !== null && (
+        <div className="w-6" data-testid="insightButton-endIcon">
+          {endIcon}
+        </div>
+      )}
     </button>
   )
 }

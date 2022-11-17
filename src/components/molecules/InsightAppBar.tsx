@@ -6,12 +6,12 @@ interface IProps {
 }
 
 const InsightAppBar = ({
-  children = null,
+  children,
 }: PropsWithChildren<IProps>): JSX.Element => (
-  <div className="navbar min-h-fit">
+  <div className="navbar min-h-fit" data-testid="insightAppBar">
     <div className="flex-none lg:hidden">
       <label htmlFor="my-drawer-3" className="btn-ghost btn-square btn">
-        <Bars3Icon className="h-6 w-6" />
+        <Bars3Icon className="h-6 w-6" data-testid="insightAppBar-icon" />
       </label>
     </div>
     {children}

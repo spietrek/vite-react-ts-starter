@@ -34,6 +34,7 @@ const InsightTypography = ({
     return (
       <Heading
         className={clsx(className, boldClass, textAlignClass, uppercaseClass)}
+        data-testid="insightTypography-header"
       >
         {children}
       </Heading>
@@ -51,6 +52,7 @@ const InsightTypography = ({
         textAlignClass,
         uppercaseClass,
       )}
+      data-testid="insightTypography-body"
     >
       {children}
     </p>

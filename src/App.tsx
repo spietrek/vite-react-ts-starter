@@ -11,6 +11,7 @@ import AppRoutes from './routes'
 import { setupStore } from './store'
 import type { ILocaleMessages } from './providers/InsightIntlProvider'
 import './styles/index.css'
+import 'react-quill/dist/quill.snow.css'
 
 const locale = navigator.language
 // const locale = 'fr-FR'

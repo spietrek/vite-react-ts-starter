@@ -15,7 +15,7 @@ const InsightAlertset = ({
     {alerts
       .filter(item => item.visible)
       .map(alert => (
-        <div key={alert.id} className="mb-2">
+        <div key={alert.id} className="mb-2" data-testid="insightAlertset">
           <InsightAlert
             id={alert.id}
             label={alert.label}

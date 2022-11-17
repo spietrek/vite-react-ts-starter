@@ -13,22 +13,27 @@ const InsightDropDownHelper = ({
   description = 'Not set',
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <div className="flex">
+    <div className="flex" data-testid="insightDropDownHelper">
       {children}
       <div className="dropdown-end dropdown">
         <label
           tabIndex={0}
-          className="btn btn-ghost btn-circle btn-xs text-info"
+          className="text-accent2-200 btn-ghost btn-xs btn-circle btn"
         >
           <InformationCircleIcon className="h-6 w-6" />
         </label>
         <div
           tabIndex={0}
-          className="card-compact card dropdown-content rounded-box w-64 bg-base-100 shadow"
+          className="card dropdown-content rounded-box card-compact w-64 border-2 bg-white shadow "
         >
           <div className="card-body">
-            <h4 className="card-title">{title}</h4>
-            <p>{description}</p>
+            <h4
+              className="card-title"
+              data-testid="insightDrowDownHelper-title"
+            >
+              {title}
+            </h4>
+            <p data-testid="insightDrowDownHelper-description">{description}</p>
           </div>
         </div>
       </div>

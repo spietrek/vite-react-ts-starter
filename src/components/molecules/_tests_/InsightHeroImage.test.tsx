@@ -11,6 +11,6 @@ describe('InsightHreoImage component', () => {
   }
   test('should render hero image', () => {
     render(<InsightHeroImage {...args} />)
-    expect(screen.getByTestId('hero-container')).toBeInTheDocument()
+    expect(screen.getByTestId('insightHeroImage')).toBeInTheDocument()
   })
 })

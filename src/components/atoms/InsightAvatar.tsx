@@ -21,7 +21,7 @@ const InsightAvatar = ({
 
   return (
     <div className="avatar">
-      <div className={classNames}>
+      <div className={classNames} data-testid="insightAvatar">
         <img alt={alt} src={src} />
       </div>
     </div>

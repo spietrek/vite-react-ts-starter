@@ -21,7 +21,11 @@ const InsightBadge = ({
   const sizeClass = BADGE_SIZE_CONFIG[size]
   const classNames = clsx('badge', variantClass, sizeClass)
 
-  return <div className={classNames}>{children}</div>
+  return (
+    <div className={classNames} data-testid="insightBadge">
+      {children}
+    </div>
+  )
 }
 
 export default InsightBadge

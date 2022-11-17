@@ -1,5 +1,5 @@
 const InsightSpinner = (): JSX.Element => (
-  <div className="my-4 w-full text-center">
+  <div className="my-4 w-full text-center" data-testid="insightSpinner">
     <svg
       role="status"
       className="mr-2 h-8 w-full animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"

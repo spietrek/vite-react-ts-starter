@@ -43,6 +43,7 @@ const InsightIconButton = ({
       aria-expanded={ariaExpanded}
       disabled={disabled}
       onClick={onClick}
+      data-testid="insightIconButton"
     >
       {children}
     </button>

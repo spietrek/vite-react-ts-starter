@@ -4,8 +4,12 @@ test('should display number with m', () => {
   expect(formatNumber(123456789.01)).toBe('123.46M')
 })
 
-test('should display number with k', () => {
+test('should display number with 2 decimals with k', () => {
   expect(formatNumber(123456.78)).toBe('123.46K')
+})
+
+test('should display number with 3 decimals with k', () => {
+  expect(formatNumber(123456.567)).toBe('123.46K')
 })
 
 test('should display number', () => {
@@ -21,5 +25,5 @@ test('should display number with 2 decimals', () => {
 })
 
 test('should display number with 3 decimals', () => {
-  expect(formatNumber(1234.5678)).toBe('1234.568')
+  expect(formatNumber(1234.5678)).toBe('1234.57')
 })

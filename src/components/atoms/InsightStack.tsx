@@ -13,8 +13,8 @@ import type {
 } from '../../constants/common/stack'
 
 interface IProps {
-  alignItems?: typeof STACK_ALIGNMENT[number]
   children: React.ReactNode
+  alignItems?: typeof STACK_ALIGNMENT[number]
   direction?: typeof STACK_DIRECTION[number]
   divider?: boolean
   justifyContent?: typeof STACK_JUSTIFICATION[number]
@@ -34,7 +34,11 @@ const joinChildren = (
       {childrenArray.map((child, index) => {
         if (isReverse && !isRow) {
           return (
-            <div className={marginClass} key={index}>
+            <div
+              className={marginClass}
+              key={index}
+              data-testid="insightStack-child"
+            >
               {child}
               {index !== 0 && separator}
             </div>
@@ -44,7 +48,9 @@ const joinChildren = (
         return (
           <React.Fragment key={index}>
             {index !== 0 && separator}
-            <span className={marginClass}>{child}</span>
+            <span className={marginClass} data-testid="insightStack-child">
+              {child}
+            </span>
           </React.Fragment>
         )
       })}
@@ -92,7 +98,7 @@ const InsightStack = ({
   return (
     <div>
       <div className={blockClass}>
-        <div className={containerClasses}>
+        <div className={containerClasses} data-testid="insightStack">
           {joinChildren(isRow, isReverse, children, separator, marginClass)}
         </div>
       </div>

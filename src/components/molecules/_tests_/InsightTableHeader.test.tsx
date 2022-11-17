@@ -8,6 +8,6 @@ const columns = academicColumns
 describe('InsightTableHeader component', () => {
   test('should render table headers', () => {
     render(<InsightTableHeader columns={columns} />)
-    expect(screen.getByTestId('insightTableHeaderRow')).toBeInTheDocument()
+    expect(screen.getByTestId('insightTableHeader')).toBeInTheDocument()
   })
 })

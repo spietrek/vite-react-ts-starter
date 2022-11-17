@@ -9,7 +9,7 @@ export const formatNumber = (value: number): string => {
   if (value > 10000 && value < 1000000) {
     return `${(value / 1000).toLocaleString('en', {
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 2,
     })}K`
   }
 
@@ -20,7 +20,7 @@ export const formatNumber = (value: number): string => {
   if (value < 10000) {
     return `${value.toLocaleString('en', {
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 2,
     })}`
   }
 

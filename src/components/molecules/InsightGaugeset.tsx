@@ -9,7 +9,11 @@ interface IProps {
 const InsightGaugeset = ({ items }: PropsWithChildren<IProps>): JSX.Element => (
   <>
     {items.map((item, index) => (
-      <div key={index} className="w-full text-center">
+      <div
+        key={index}
+        className="w-full text-center"
+        data-testid="insightGaugeSet"
+      >
         <InsightGauge
           value={item.value}
           color={item.color}

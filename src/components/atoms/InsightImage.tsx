@@ -21,6 +21,7 @@ const InsightImage = ({
     alt={altText}
     className="mx-auto block transform transition duration-500"
     loading="lazy"
+    data-testid="insightImage"
   />
 )
 
