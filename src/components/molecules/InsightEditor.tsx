@@ -2,14 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useState, useRef, useMemo, useEffect } from 'react'
 import ReactQuill, { Quill } from 'react-quill'
-import 'react-quill/dist/quill.snow.css'
 import { REDO_ICON, UNDO_ICON } from '../../constants/common/icons'
-import { useStrings } from '../../hooks/useStrings'
+import { useString } from '../../hooks/useString'
 
 const InsightEditor = (): JSX.Element => {
   const reactQuillRef = useRef<ReactQuill>(null)
   const [value, setValue] = useState('')
-  const { characterCount, wordCount, handlers } = useStrings({
+  const { characterCount, wordCount, handlers } = useString({
     initialState: value,
     handleHtmlTags: true,
   })
@@ -99,7 +98,7 @@ const InsightEditor = (): JSX.Element => {
   ]
 
   return (
-    <>
+    <div data-testid="insightEditor">
       <ReactQuill
         placeholder="Please enter your monthly progress report..."
         ref={reactQuillRef}
@@ -117,7 +116,7 @@ const InsightEditor = (): JSX.Element => {
           Word count: {wordCount}
         </span>
       </div>
-    </>
+    </div>
   )
 }
 
