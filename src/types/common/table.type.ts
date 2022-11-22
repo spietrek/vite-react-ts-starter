@@ -5,7 +5,7 @@ export interface IColumnDefinition<T, K extends keyof T> {
   width?: number
   visible?: boolean
   align?: typeof CELL_ALIGNMENT[number] | null
-  renderCell?: (row: T) => React.ReactNode
+  renderCell?: (column: IColumnDefinition<T, K>, row: T) => React.ReactNode
 }
 
 export interface ITableProps<T, K extends keyof T> {
@@ -20,4 +20,9 @@ export interface ITableHeaderProps<T, K extends keyof T> {
 export interface ITableRowsProps<T, K extends keyof T> {
   data: T[]
   columns: Array<IColumnDefinition<T, K>>
+}
+
+export interface ITableRowCell<T, K extends keyof T> {
+  column: IColumnDefinition<T, K>
+  item: T
 }
