@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react'
 import InsightCard from './InsightCard'
 import type { ICard } from '../../types/common/card.type'
 
@@ -5,7 +6,7 @@ interface IProps {
   cards: ICard[]
 }
 
-const InsightCardset = ({ cards }: IProps): JSX.Element => {
+const InsightCardset = ({ cards }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <div className="overflow-x-auto">
       <div className="flex">
