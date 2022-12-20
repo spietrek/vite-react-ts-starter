@@ -14,15 +14,15 @@ interface TUseStringReturn {
   handlers: Handlers
 }
 
-interface IUseStringsProps {
+interface IUseStringProps {
   initialState?: string
   handleHtmlTags?: boolean
 }
 
-export const useStrings = ({
+export const useString = ({
   initialState = '',
   handleHtmlTags = true,
-}: IUseStringsProps): TUseStringReturn => {
+}: IUseStringProps): TUseStringReturn => {
   const [state, setState] = useState<string>(initialState)
   const [wordCount, setWordCount] = useState<number>(0)
   const [characterCount, setCharacterCount] = useState<number>(0)
